@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="17" viewBox="0 0 18 17">
+  <defs>
+    <clipPath id="clip-subtitles">
+      <rect width="18" height="17"/>
+    </clipPath>
+  </defs>
+  <g id="subtitles" clip-path="url(#clip-subtitles)">
+    <rect width="18" height="17" fill="rgba(255,255,255,0)"/>
+    <g id="noun_subtitle_2617277" transform="translate(-3.653 -4.153)">
+      <g id="Layer_13" data-name="Layer 13" transform="translate(5 5)">
+        <path id="Path_67" data-name="Path 67" d="M17.524,5H7.783A2.782,2.782,0,0,0,5,7.783v9.741a2.782,2.782,0,0,0,2.783,2.783h9.741a2.782,2.782,0,0,0,2.783-2.783V7.783A2.782,2.782,0,0,0,17.524,5ZM7.783,12.653h6.958a.7.7,0,0,1,0,1.392H7.783a.7.7,0,0,1,0-1.392Zm.7,4.87h-.7a.7.7,0,1,1,0-1.392h.7a.7.7,0,1,1,0,1.392Zm9.045,0H10.566a.7.7,0,1,1,0-1.392h6.958a.7.7,0,1,1,0,1.392Zm0-3.479h-.7a.7.7,0,1,1,0-1.392h.7a.7.7,0,1,1,0,1.392Z" transform="translate(-5 -5)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

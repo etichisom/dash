@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="23" height="19" viewBox="0 0 23 19">
+  <defs>
+    <clipPath id="clip-sound">
+      <rect width="23" height="19"/>
+    </clipPath>
+  </defs>
+  <g id="sound" clip-path="url(#clip-sound)">
+    <rect width="23" height="19" fill="rgba(255,255,255,0)"/>
+    <g id="noun_Sound_1939979" transform="translate(-1.136 -9.926)">
+      <g id="Group_135" data-name="Group 135" transform="translate(2.5 11.141)">
+        <path id="Path_59" data-name="Path 59" d="M65.864,32.367a1.017,1.017,0,1,0-1.258,1.6,2.566,2.566,0,0,1-.107,4.05.894.894,0,0,0-.149,1.279l.085.085a1.03,1.03,0,0,0,1.386.171,4.6,4.6,0,0,0,.043-7.183Z" transform="translate(-51.007 -27.665)" fill="#fff"/>
+        <path id="Path_60" data-name="Path 60" d="M77.068,19.017a1.031,1.031,0,0,0-1.407.149h0a1.006,1.006,0,0,0,.128,1.407,6.289,6.289,0,0,1,0,9.763,1.006,1.006,0,0,0-.128,1.407h0a1.012,1.012,0,0,0,1.407.171,8.271,8.271,0,0,0,0-12.9Z" transform="translate(-59.887 -17.172)" fill="#fff"/>
+        <path id="Path_61" data-name="Path 61" d="M11.41,11.431,6.23,15.417H3.694A1.192,1.192,0,0,0,2.5,16.61v5.627a1.192,1.192,0,0,0,1.194,1.194H6.23l5.2,3.986a1.372,1.372,0,0,0,2.217-1.108V12.518A1.391,1.391,0,0,0,11.41,11.431Z" transform="translate(-2.5 -11.141)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>
