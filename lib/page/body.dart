@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:work/component/cart.dart';
 import 'package:work/component/live.dart';
 import 'package:work/component/livew.dart';
 import 'package:work/component/search.dart';
@@ -96,64 +97,7 @@ class _BodyState extends State<Body> {
                 ),
               ),
               SizedBox(height: 30,),
-              Padding(
-                padding: const EdgeInsets.only(left: 50,right: 50),
-                child: Row(
-                  children: [
-                    Container(
-                      height: 30,
-                      width: 30,
-                      decoration: BoxDecoration(
-                        color: Colors.blue.withOpacity(0.4),
-                        shape: BoxShape.circle
-                      ),
-                      child: Icon(Icons.arrow_back_ios_rounded,color:Colors.blue[900],),
-                    ),
-                    SizedBox(width: 10,),
-                    Expanded(
-                      child: Container(
-                        height: 74,
-                        child: ListView(
-                          scrollDirection: Axis.horizontal,
-                          children:l.map((e){
-                            return Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Container(
-                                height:74,
-                                width: 227,
-                                decoration:BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                    image: DecorationImage(
-                                        image: AssetImage('assets/'+e.assest),
-                                        fit: BoxFit.cover
-                                    )
-                                ),
-                                child:  Center(
-                                  child: AutoSizeText(
-                                    e.cat,
-                                    style:GoogleFonts.lato(fontSize: 20,color: Colors.white,fontWeight: FontWeight.bold),
-                                    maxLines: 2,
-                                  ),
-                                ),
-                              ),
-                            );
-                          }).toList(),
-                        ),
-                      ),
-                    ),
-                    SizedBox(width: 15,),
-                    Container(
-                      height: 30,
-                      width: 30,
-                      decoration: BoxDecoration(
-                          color: Colors.blue.withOpacity(0.4),
-                          shape: BoxShape.circle
-                      ),
-                      child: Icon(Icons.arrow_forward_ios_rounded,color:Colors.blue[900],),
-                    ),
-                  ],
-                ),
-              ),
+              Cart(size,context),
               SizedBox(height: 30,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
