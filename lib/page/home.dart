@@ -36,10 +36,10 @@ class _HomeState extends State<Home> {
                      padding: const EdgeInsets.all(0.0),
                      child: Row(
                        children: [
-                         SizedBox(width: 50,),
+                         SizedBox(width: 30,),
                         Container(
                           height: 60,
-                          width: 60,
+                          width: 90,
                           decoration:BoxDecoration(
 
                               borderRadius: BorderRadius.circular(10),
@@ -49,24 +49,24 @@ class _HomeState extends State<Home> {
                               )
                           ),
                         ),
-                         SizedBox(width: 50,),
-                         option(context, 0,'Project',Icon(Icons.settings,size: 19,
+                         SizedBox(width: 30,),
+                         option(context, 0,'Project',Icon(Icons.settings,size: 17,
                              color:currentindex==0?Colors.blue:
                              hover[0]?Colors.green:Colors.black)),
                          SizedBox(width: 15,),
-                         option(context, 1,'Explore',Icon(Icons.flight_takeoff,size: 19,
+                         option(context, 1,'Explore',Icon(Icons.flight_takeoff,size: 17,
                              color:currentindex==1?Colors.blue:
                              hover[1]?Colors.green:Colors.black)),
                          SizedBox(width: 15,),
-                         option(context, 2,'Blogs',Icon(Icons.my_library_books_outlined,size: 19,
+                         option(context, 2,'Blogs',Icon(Icons.my_library_books_outlined,size: 17,
                              color:currentindex==2?Colors.blue:
                              hover[2]?Colors.green:Colors.black)),
                          SizedBox(width: 15,),
-                         option(context, 3,'job',Icon(Icons.work,size: 19,
+                         option(context, 3,'job',Icon(Icons.work,size: 17,
                              color:currentindex==3?Colors.blue:
                              hover[3]?Colors.green:Colors.black)),
                          SizedBox(width: 15,),
-                         option(context, 4,'learn',Icon(Icons.menu_book,size: 19,
+                         option(context, 4,'learn',Icon(Icons.menu_book,size: 17,
                              color:currentindex==4?Colors.blue:
                              hover[4]?Colors.green:Colors.black)),
                          Expanded(child: Container()),
