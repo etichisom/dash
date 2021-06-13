@@ -44,7 +44,7 @@ class _HomeState extends State<Home> {
                             color: Colors.yellow,
                               borderRadius: BorderRadius.circular(10),
                               image: DecorationImage(
-                                  image: AssetImage('img/levis_logo.png'),
+                                  image: AssetImage('img/logo.png'),
                                   fit: BoxFit.scaleDown
                               )
                           ),
