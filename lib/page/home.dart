@@ -38,26 +38,17 @@ class _HomeState extends State<Home> {
                        children: [
                          SizedBox(width: 50,),
                         Container(
-                          height: 50,
-                          width: 50,
+                          height: 60,
+                          width: 60,
                           decoration:BoxDecoration(
-                            color: Colors.yellow,
+
                               borderRadius: BorderRadius.circular(10),
                               image: DecorationImage(
                                   image: AssetImage('img/logo.png'),
-                                  fit: BoxFit.scaleDown
+                                  fit: BoxFit.contain
                               )
                           ),
                         ),
-                         SizedBox(width: 5,),
-                         AutoSizeText(
-                           'ExploriCa\nInnovations',
-                           style: GoogleFonts.ubuntu(
-                             fontSize: 13,color: Colors.blue[300],
-                             fontWeight: FontWeight.bold
-                           ),
-                           maxLines: 2,
-                         ),
                          SizedBox(width: 50,),
                          option(context, 0,'Project',Icon(Icons.settings,size: 19,
                              color:currentindex==0?Colors.blue:
