@@ -23,7 +23,7 @@ Widget jobcard(Size size, Jobm e){
                   width: 20,
                   decoration: BoxDecoration(
                       image: DecorationImage(
-                          image: AssetImage('assets/'+e.avatar)
+                          image: AssetImage(e.avatar)
                       )
                   ),
                 ),
