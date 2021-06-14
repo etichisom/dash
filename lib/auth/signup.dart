@@ -34,12 +34,12 @@ class Box{
                          Expanded(
                              child: Container(
 
-                                 child: Image.asset('img/logo.png',fit: BoxFit.scaleDown,))),
+                                 child: Image.asset('img/login_page_logo.png',fit: BoxFit.scaleDown,))),
                          Expanded(
                              child: Container(
                                child: Align(
                                    alignment: Alignment.bottomLeft,
-                                   child: Image.asset('assets/banner_img.png')),
+                                   child: Image.asset('img/login_img.png')),
                              )),
 
                        ],
@@ -47,10 +47,17 @@ class Box{
                    )),
                    Expanded(child: Container(
                      child: Column(
+                       crossAxisAlignment: CrossAxisAlignment.end,
                        children: [
-                         Expanded(
-                             flex: 1,
-                             child: Container()),
+                         InkWell(
+                           child: Padding(
+                             padding: const EdgeInsets.all(8.0),
+                             child: Icon(Icons.clear),
+                           ),
+                           onTap: (){
+                             Navigator.pop(context);
+                           },
+                         ),
                          Expanded(
                              flex: 4,
                              child: Container(
@@ -59,105 +66,103 @@ class Box{
                                      Expanded(
                                          flex: 1,
                                          child: Container()),
-                                     Expanded(
-                                         flex: 4,
-                                         child: PhysicalModel(
-                                           elevation: 7,
-                                           borderRadius: BorderRadius.circular(10),
-                                           color: Colors.black,
-                                           child: Container(
-                                             decoration:BoxDecoration(
-                                                 color: Colors.white,
-                                                 borderRadius: BorderRadius.circular(10)
-                                             ) ,
-                                             child: Column(
+                                     PhysicalModel(
+                                       elevation: 7,
+                                       borderRadius: BorderRadius.circular(10),
+                                       color: Colors.black,
+                                       child: Container(
+                                         height: 400,
+                                         width: 350,
+                                         decoration:BoxDecoration(
+                                             color: Colors.white,
+                                             borderRadius: BorderRadius.circular(10)
+                                         ) ,
+                                         child: Column(
+                                           children: [
+                                             SizedBox(height: 5,),
+                                             Row(
                                                children: [
-                                                 SizedBox(height: 5,),
-                                                 Row(
-                                                   children: [
-                                                     SizedBox(width: 10,),
-                                                     Padding(
-                                                       padding: const EdgeInsets.all(8.0),
-                                                       child: Column(
-                                                         children: [
-                                                           InkWell(
-                                                             onHover: (v){
-                                                               setState((){
-                                                                 h[0]=v;
-                                                               });
-                                                             },
-                                                             onTap: (){
-                                                               setState((){
-                                                                ind=0;
-                                                              });
-                                                             },
-                                                             child: AutoSizeText(
-                                                               'Login',
-                                                               style:GoogleFonts.lato(fontSize: 19,
-                                                                   color:ind==0?Colors.blue:
-                                                                   h[0]?Colors.green[100]:Colors.black,
-                                                                   fontWeight: FontWeight.bold),
-                                                             ),
-                                                           ),
-                                                           SizedBox(height: 5,),
-                                                           Container(width:60 ,
-                                                             height: 3,
-                                                             color:ind==0?Colors.blue:
-                                                             h[0]?Colors.green[100]:Colors.white,)
-                                                         ],
+                                                 SizedBox(width: 10,),
+                                                 Padding(
+                                                   padding: const EdgeInsets.all(8.0),
+                                                   child: Column(
+                                                     children: [
+                                                       InkWell(
+                                                         onHover: (v){
+                                                           setState((){
+                                                             h[0]=v;
+                                                           });
+                                                         },
+                                                         onTap: (){
+                                                           setState((){
+                                                            ind=0;
+                                                          });
+                                                         },
+                                                         child: AutoSizeText(
+                                                           'Login',
+                                                           style:GoogleFonts.lato(fontSize: 19,
+                                                               color:ind==0?Colors.blue:
+                                                               h[0]?Colors.green[100]:Colors.black,
+                                                               fontWeight: FontWeight.bold),
+                                                         ),
                                                        ),
-                                                     ),
-                                                     Padding(
-                                                       padding: const EdgeInsets.all(8.0),
-                                                       child: Column(
-                                                         children: [
-                                                           InkWell(
-                                                             onHover: (v){
-                                                               setState((){
-                                                                 h[1]=v;
-                                                               });
-                                                             },
-                                                             onTap: (){
-                                                               setState((){
-                                                                 ind=1;
-                                                               });
-                                                             },
-                                                             child: AutoSizeText(
-                                                               'Sign Up',
-                                                               style:GoogleFonts.lato(fontSize: 19,
-                                                                   color:ind==1?Colors.blue:
-                                                                   h[1]?Colors.green[100]:Colors.black,
-                                                                   fontWeight: FontWeight.bold),
-                                                             ),
-                                                           ),
-                                                           SizedBox(height: 5,),
-                                                           Container(width:60 ,
-                                                             height: 3,
-                                                             color:ind==1?Colors.blue:
-                                                             h[1]?Colors.green[200]:Colors.white,)
-                                                         ],
-                                                       ),
-                                                     ),
-                                                   ],
+                                                       SizedBox(height: 5,),
+                                                       Container(width:60 ,
+                                                         height: 3,
+                                                         color:ind==0?Colors.blue:
+                                                         h[0]?Colors.green[100]:Colors.white,)
+                                                     ],
+                                                   ),
                                                  ),
-                                                 SizedBox(height: 10,),
-                                                 Expanded(child: Container(
-                                                   child: ind==1?signup(setState):login(setState),
-                                                 ))
+                                                 Padding(
+                                                   padding: const EdgeInsets.all(8.0),
+                                                   child: Column(
+                                                     children: [
+                                                       InkWell(
+                                                         onHover: (v){
+                                                           setState((){
+                                                             h[1]=v;
+                                                           });
+                                                         },
+                                                         onTap: (){
+                                                           setState((){
+                                                             ind=1;
+                                                           });
+                                                         },
+                                                         child: AutoSizeText(
+                                                           'Sign Up',
+                                                           style:GoogleFonts.lato(fontSize: 19,
+                                                               color:ind==1?Colors.blue:
+                                                               h[1]?Colors.green[100]:Colors.black,
+                                                               fontWeight: FontWeight.bold),
+                                                         ),
+                                                       ),
+                                                       SizedBox(height: 5,),
+                                                       Container(width:60 ,
+                                                         height: 3,
+                                                         color:ind==1?Colors.blue:
+                                                         h[1]?Colors.green[200]:Colors.white,)
+                                                     ],
+                                                   ),
+                                                 ),
                                                ],
                                              ),
+                                             SizedBox(height: 10,),
+                                             Expanded(child: Container(
+                                               child: ind==1?signup(setState):login(setState),
+                                             ))
+                                           ],
+                                         ),
 
-                                           ),
-                                         )),
+                                       ),
+                                     ),
                                      Expanded(
                                          flex: 1,
                                          child: Container()),
                                    ],
                                  )
                              )),
-                         Expanded(
-                             flex: 1,
-                             child: Container())
+
                        ],
                      ),
                    ))
@@ -180,7 +185,43 @@ class Box{
               'Enter your information to setup a new account.',
               style:GoogleFonts.lato(fontSize: 12,color: Colors.black),
             maxLines: 3,overflow: TextOverflow.clip,),
+            SizedBox(height: 8,),
+            TextFormField(
+              decoration: InputDecoration(
+                  prefixIcon: Icon(Icons.mail,size: 14,),
+                  labelStyle: TextStyle(fontSize: 14),
+                  contentPadding: EdgeInsets.only(top:8),
+                  labelText: 'Username'
+              ),
+            ),
+            TextFormField(
+              decoration: InputDecoration(
+                  prefixIcon: Icon(Icons.mail,size: 14,),
+                  labelStyle: TextStyle(fontSize: 14),
+                  contentPadding: EdgeInsets.only(top:8),
+                  labelText: 'Email Id'
+              ),
+            ),
+            TextFormField(
+              decoration: InputDecoration(
+                  prefixIcon: Icon(Icons.lock,size: 14,),
+                  labelText: 'Password',
+                  labelStyle: TextStyle(fontSize: 14)
+
+              ),
+            ),
+            SizedBox(height: 5,),
+            SizedBox(height: 8,),
+            ElevatedButton(onPressed: (){}, child:Text('Get Started',style: TextStyle(color: Colors.white),)),
             SizedBox(height: 10,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text('or login with',),
+              ],
+            ),
+            SizedBox(height: 5,),
+            gf()
 
           ],
         ),
@@ -245,15 +286,37 @@ class Box{
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-       RaisedButton.icon(onPressed: (){},
-           icon: Icon(FeatherIcons.mail),
-           color: Colors.white,
-           label: Text('Google',style: TextStyle(color: Colors.blue))),
+        InkWell(
+          onTap: (){},
+          child: Card(
+            child: Padding(
+              padding: const EdgeInsets.all(3.0),
+              child: Row(
+                children: [
+                  Image.asset('img/facebook.png',fit: BoxFit.contain,),
+                  SizedBox(width: 3,),
+                  Text('Facebook',style: TextStyle(color: Colors.blue)),
+                ],
+              ),
+            ),
+          ),
+        ),
         SizedBox(width: 5,),
-        RaisedButton.icon(onPressed: (){},
-            icon: Icon(FeatherIcons.facebook,color: Colors.blue,),
-            color: Colors.white,
-            label: Text('Facebook',style: TextStyle(color: Colors.blue)))
+       InkWell(
+         onTap: (){},
+         child: Card(
+           child: Padding(
+             padding: const EdgeInsets.all(3.0),
+             child: Row(
+               children: [
+                 Image.asset('img/google.png',fit: BoxFit.contain,),
+                 SizedBox(width: 3,),
+                 Text('Google',style: TextStyle(color: Colors.blue)),
+               ],
+             ),
+           ),
+         ),
+       )
       ],
     );
   }
