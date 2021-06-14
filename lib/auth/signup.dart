@@ -11,8 +11,10 @@ class Box{
    Controller controller;
   int ind =0;
   List h = [false,false];
+  String username,email,password;
   final loginkey = GlobalKey<FormState>();
   final signupkey = GlobalKey<FormState>();
+  bool secure =true;
   Box(this.context,this.size,this.controller);
 
   Widget dia (){
@@ -181,6 +183,7 @@ class Box{
     return Padding(
       padding: const EdgeInsets.all(15.0),
       child: Form(
+        key: signupkey,
         child: Column(
           children: [
             AutoSizeText(
@@ -189,14 +192,26 @@ class Box{
             maxLines: 3,overflow: TextOverflow.clip,),
             SizedBox(height: 8,),
             TextFormField(
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter a valid Username';
+                }
+                return null;
+              },
               decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.mail,size: 14,),
+                  prefixIcon: Icon(Icons.person,size: 14,),
                   labelStyle: TextStyle(fontSize: 14),
                   contentPadding: EdgeInsets.only(top:8),
                   labelText: 'Username'
               ),
             ),
             TextFormField(
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'enter a valid Email';
+                }
+                return null;
+              },
               decoration: InputDecoration(
                   prefixIcon: Icon(Icons.mail,size: 14,),
                   labelStyle: TextStyle(fontSize: 14),
@@ -205,6 +220,12 @@ class Box{
               ),
             ),
             TextFormField(
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Choose a password';
+                }
+                return null;
+              },
               decoration: InputDecoration(
                   prefixIcon: Icon(Icons.lock,size: 14,),
                   labelText: 'Password',
@@ -214,7 +235,13 @@ class Box{
             ),
             SizedBox(height: 5,),
             SizedBox(height: 8,),
-            ElevatedButton(onPressed: (){}, child:Text('Get Started',style: TextStyle(color: Colors.white),)),
+            ElevatedButton(onPressed: (){
+              if(signupkey.currentState.validate()){
+                print('vaild');
+              }else{
+                print('not valid');
+              }
+            }, child:Text('Get Started',style: TextStyle(color: Colors.white),)),
             SizedBox(height: 10,),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -235,6 +262,7 @@ class Box{
     return  Padding(
       padding: const EdgeInsets.all(15.0),
       child: Form(
+        key: loginkey,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -244,6 +272,12 @@ class Box{
               maxLines: 3,overflow: TextOverflow.clip,),
             SizedBox(height: 8,),
             TextFormField(
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'enter a valid Email';
+                }
+                return null;
+              },
               decoration: InputDecoration(
                 prefixIcon: Icon(Icons.mail,size: 14,),
                   labelStyle: TextStyle(fontSize: 14),
@@ -252,9 +286,16 @@ class Box{
               ),
             ),
             TextFormField(
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter password';
+                }
+                return null;
+              },
               decoration: InputDecoration(
                   prefixIcon: Icon(Icons.lock,size: 14,),
                   labelText: 'Password',
+                   suffixIcon: ob(setState),
                    labelStyle: TextStyle(fontSize: 14)
 
               ),
@@ -267,7 +308,13 @@ class Box{
               ],
             ),
             SizedBox(height: 8,),
-            ElevatedButton(onPressed: (){}, child:Text('Login',style: TextStyle(color: Colors.white),)),
+            ElevatedButton(onPressed: (){
+             if(loginkey.currentState.validate()){
+               print('vaild');
+             }else{
+               print('not valid');
+             }
+            }, child:Text('Login',style: TextStyle(color: Colors.white),)),
             SizedBox(height: 10,),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -322,4 +369,14 @@ class Box{
       ],
     );
   }
+
+ Widget ob(setState) {
+    return GestureDetector(
+      onTap: (){
+        setState((){
+
+        });
+      },
+        child: secure?Icon(Icons.lock): Icon(Icons.remove_red_eye))
+ }
 }
