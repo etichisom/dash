@@ -220,6 +220,7 @@ class Box{
               ),
             ),
             TextFormField(
+              obscureText: secure,
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Choose a password';
@@ -229,6 +230,7 @@ class Box{
               decoration: InputDecoration(
                   prefixIcon: Icon(Icons.lock,size: 14,),
                   labelText: 'Password',
+                  suffixIcon: ob(setState),
                   labelStyle: TextStyle(fontSize: 14)
 
               ),
@@ -286,6 +288,7 @@ class Box{
               ),
             ),
             TextFormField(
+              obscureText: secure,
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Please enter password';
@@ -374,9 +377,13 @@ class Box{
     return GestureDetector(
       onTap: (){
         setState((){
-
+          if(secure){
+            secure=false;
+          }else{
+            secure=true;
+          }
         });
       },
-        child: secure?Icon(Icons.lock): Icon(Icons.remove_red_eye))
+        child: secure?Icon(Icons.remove_red_eye,size: 13,):Icon(Icons.lock,size: 14,));
  }
 }
