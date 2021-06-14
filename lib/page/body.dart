@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:work/auth/signup.dart';
 import 'package:work/component/cart.dart';
 import 'package:work/component/live.dart';
 import 'package:work/component/livew.dart';
@@ -65,7 +66,9 @@ class _BodyState extends State<Body> {
                           ),
                           SizedBox(height: 25,),
                           RaisedButton(
-                              onPressed: (){},
+                              onPressed: (){
+
+                              },
                               color: Colors.white,
                               child:Padding(
                                 padding: const EdgeInsets.all(8.0),

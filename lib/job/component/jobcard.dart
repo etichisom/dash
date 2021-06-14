@@ -67,7 +67,7 @@ Widget jobcard(Size size, Jobm e){
               ],
             ),
             SizedBox(height: 8,),
-            Text(e.content,maxLines: 6,overflow: TextOverflow.clip,style: GoogleFonts.lato(fontSize: 10,
+            Text(e.content,maxLines: 3,overflow: TextOverflow.clip,style: GoogleFonts.lato(fontSize: 10,
                 color: Colors.black,),),
             SizedBox(height: 8,),
             Container(

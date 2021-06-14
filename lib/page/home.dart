@@ -1,9 +1,13 @@
-import 'dart:html';
+
 
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:work/auth/signup.dart';
+import 'package:work/controller/authcontroller.dart';
 import 'package:work/page/body.dart';
 import 'package:work/page/job.dart';
 List page = [ Job(), Body(), Body(), Job(), Body()];
@@ -16,7 +20,7 @@ class _HomeState extends State<Home> {
   Size size;
   int currentindex =0;
   List hover = [ false, false, false, false, false];
-
+  final Controller c = Get.put(Controller());
   @override
   Widget build(BuildContext context) {
     size = MediaQuery.of(context).size;
@@ -70,15 +74,17 @@ class _HomeState extends State<Home> {
                              color:currentindex==4?Colors.blue:
                              hover[4]?Colors.green:Colors.black)),
                          Expanded(child: Container()),
-                         FlatButton.icon(icon: Icon(Icons.add_circle,color: Colors.blue,),
+                         c.count==0?signb(context):FlatButton.icon(icon: Icon(Icons.add_circle,color: Colors.blue,),
                            onPressed: (){},
                            label: Text('Add project',style: GoogleFonts.lato(color: Colors.lightBlue),),),
-                         SizedBox(width: 13,),
+                         SizedBox(width: 6,),
+                         c.count==0?login(context):SizedBox(),
+                         SizedBox(width: 6,),
                          notif(context,Icon(Icons.notifications,size: 27,),7),
                          SizedBox(width: 13,),
                          notif(context,Icon(Icons.email,size: 27,),17),
                          SizedBox(width: 5,),
-                         CircleAvatar(
+                         c.count==0?Icon(Icons.person):CircleAvatar(
                            radius: 15,
                            backgroundImage: AssetImage('assets/profile 1.png'),
                          ),
@@ -167,4 +173,51 @@ class _HomeState extends State<Home> {
       ),
     );
  }
+
+  Widget signb(BuildContext context) {
+    return InkWell(
+      onTap: (){
+        Box(context,size,c).dia();
+      },
+      child: Container(
+        width: 80,
+        height: 30,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(18),
+          border: Border.all(color: Colors.blue)
+        ),
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(3.0),
+            child: Text(
+              'Sign up',
+                  style: TextStyle(color: Colors.blue,fontSize: 13),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+  Widget login(BuildContext context) {
+    return InkWell(
+      onTap: (){},
+      child: Container(
+        width: 80,
+        height: 30,
+        decoration: BoxDecoration(
+          color: Colors.blue,
+            borderRadius: BorderRadius.circular(18),
+        ),
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(3.0),
+            child: Text(
+              'Login',
+              style: TextStyle(color: Colors.white,fontSize: 13),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
 }
