@@ -11,6 +11,8 @@ class Box{
    Controller controller;
   int ind =0;
   List h = [false,false];
+  final loginkey = GlobalKey<FormState>();
+  final signupkey = GlobalKey<FormState>();
   Box(this.context,this.size,this.controller);
 
   Widget dia (){
@@ -257,7 +259,7 @@ class Box{
 
               ),
             ),
-            SizedBox(height: 5,),
+            SizedBox(height: 10,),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
