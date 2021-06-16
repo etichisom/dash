@@ -2,7 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:work/component/cart.dart';
-import 'package:work/component/header.dart';
+import 'package:work/component/head.dart';
 import 'package:work/component/search.dart';
 import 'package:work/job/component/jobcard.dart';
 import 'package:work/job/search.dart';

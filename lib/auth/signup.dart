@@ -75,7 +75,7 @@ class Box{
                                        borderRadius: BorderRadius.circular(10),
                                        color: Colors.black,
                                        child: Container(
-                                         height: 400,
+                                         height: 450,
                                          width: 350,
                                          decoration:BoxDecoration(
                                              color: Colors.white,

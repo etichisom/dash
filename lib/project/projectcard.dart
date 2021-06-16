@@ -1,0 +1,112 @@
+import 'package:flutter/cupertino.dart';
+
+import 'dart:math';
+
+import 'package:auto_size_text/auto_size_text.dart';
+
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:work/model/livem.dart';
+import 'package:work/model/projectm.dart';
+import 'package:work/model/up.dart';
+
+Widget Pcard(Size size, Mproject e){
+  return Padding(
+    padding: const EdgeInsets.all(8.0),
+    child: PhysicalModel(
+      elevation: 5,
+      color: Colors.black,
+      borderRadius: BorderRadius.circular(10),
+      child: Container(
+        width:size.width/4-55,
+        height:320,
+        decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(10)
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              height:180,
+              decoration:BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  image: DecorationImage(
+                      image: AssetImage(e.assest),
+                      fit: BoxFit.cover
+                  )
+              ),
+            ),
+            Expanded(child: Container(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    AutoSizeText(
+                      e.tite,
+                      style:GoogleFonts.lato(fontSize: 15,color: Colors.black,fontWeight: FontWeight.bold),
+                      maxLines: 2,
+                      overflow: TextOverflow.clip,
+                    ),
+                    SizedBox(height: 2,),
+                    Container(
+                        width:size.width/4-40,
+                        height: 25,
+                        child: ListView(
+                          scrollDirection: Axis.horizontal,
+                          children:e.list.map((el){
+                            return  Padding(
+                              padding: const EdgeInsets.all(3.0),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: Colors.grey[300],
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(4.0),
+                                  child: Text(el,style: TextStyle(fontSize: 9,fontWeight: FontWeight.bold),),
+                                ),
+                              ),
+                            );
+                          }).toList(),
+                        )),
+                    Expanded(child: Container()),
+                    Row(
+                      children: [
+                        CircleAvatar(
+                          radius: 8,
+                          backgroundImage:AssetImage(e.avatar),
+                        ),
+                        SizedBox(width: 5,),
+                        Text(e.Author,
+                          style: TextStyle(fontSize: 10
+                          ),),
+                        Expanded(child: Container()),
+                        Icon(Icons.chat_bubble,),
+                        SizedBox(width: 5,),
+                        Text(e.comment.toString(),
+                          style: TextStyle(fontSize: 10
+                          ),),
+                        SizedBox(width: 5,),
+                        Icon(Icons.thumb_up,color:e.islike?Colors.blue:Colors.black),
+                        SizedBox(width: 5,),
+                        Text(e.like.toString(),
+                          style: TextStyle(
+                              color:e.islike?Colors.blue:Colors.black,fontSize: 10
+                          ),),
+                        SizedBox(width: 5,),
+                        Icon(Icons.save,),
+
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ))
+          ],
+        ),
+      ),
+    ),
+  );
+}

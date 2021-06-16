@@ -10,7 +10,8 @@ import 'package:work/auth/signup.dart';
 import 'package:work/controller/authcontroller.dart';
 import 'package:work/page/body.dart';
 import 'package:work/page/job.dart';
-List page = [ Job(), Body(), Body(), Job(), Body()];
+import 'package:work/project/project.dart';
+List page = [ Project(), Body(), Body(), Job(), Body()];
 class Home extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
