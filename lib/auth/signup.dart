@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:work/controller/authcontroller.dart';
+import 'package:work/model/jobm.dart';
 
 class Box{
   BuildContext context;

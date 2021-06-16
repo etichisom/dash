@@ -117,7 +117,7 @@ class _JobState extends State<Job> {
                 crossAxisCount:size.width>1030? 4:3,
                 children:jlist.map((e) => Padding(
                   padding: const EdgeInsets.all(13.0),
-                  child: jobcard(size, e),
+                  child: jobcard(size, e,context),
                 )).toList(),
               ),
             )

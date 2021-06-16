@@ -2,9 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:work/component/applyj.dart';
 import 'package:work/model/jobm.dart';
 
-Widget jobcard(Size size, Jobm e){
+Widget jobcard(Size size, Jobm e,BuildContext context){
   return PhysicalModel(color: Colors.black,
     elevation: 5,
     child: Container(
@@ -100,7 +101,7 @@ Widget jobcard(Size size, Jobm e){
               Text('View Job',style: TextStyle(color: Colors.blue),),
                 Expanded(child: Container()),
                 OutlineButton(onPressed: (){
-                  print(size.width);
+                  Apply(size, context,e).dial();
                 },
                 child: Text('Apply Now',style: TextStyle(color: Colors.blue)),
                 color: Colors.blueAccent,),
