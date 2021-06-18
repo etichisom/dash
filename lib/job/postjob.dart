@@ -1,5 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:csc_picker/csc_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:work/page/job.dart';
 
@@ -9,6 +11,7 @@ class PostJob extends StatefulWidget {
 }
 
 class _PostJobState extends State<PostJob> {
+  int radio =1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -120,7 +123,116 @@ class _PostJobState extends State<PostJob> {
                       SizedBox(height: 15,),
                       t('Job Description'),
                       SizedBox(height: 10,),
-                      bigfield()
+                      bigfield(),
+                      SizedBox(height: 15,),
+                      t('Job Location'),
+                      SizedBox(height: 10,),
+                      CSCPicker(
+                        onCountryChanged: (value) {
+                          setState(() {
+
+                          });
+                        },
+                        onStateChanged:(value) {
+                          setState(() {
+
+                          });
+                        },
+                        onCityChanged:(value) {
+                          setState(() {
+
+                          });
+                        },
+                      ),
+                      SizedBox(height: 15,),
+                      t('Fields by Categories'),
+                      SizedBox(height: 10,),
+                      field1('Select at least 3 related fields'),
+                      SizedBox(height: 15,),
+                      t('Tags'),
+                      SizedBox(height: 10,),
+                      field('Add at least 3 related tags'),
+                      SizedBox(height: 15,),
+                      t('Company Web URL'),
+                      SizedBox(height: 10,),
+                      field('https://www.example.com'),
+                      SizedBox(height: 15,),
+                      t('Company Mail'),
+                      SizedBox(height: 10,),
+                      field('example@company.com'),
+                      SizedBox(height: 20,),
+                      Text('Social Media Links',style: GoogleFonts.roboto(fontSize: 17,fontWeight: FontWeight.bold),),
+                      SizedBox(height: 10,),
+                      Row(
+                        children: [
+                          Expanded(
+                              child: Column(
+                                children: [
+                                  t('Facebook'),
+                                  SizedBox(height: 10,),
+                                  field(''),
+                                  SizedBox(height: 20,),
+                                  t('Linked in'),
+                                  SizedBox(height: 10,),
+                                  field(''),
+                                ],
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                              )
+                          ),
+                          SizedBox(width: 20,),
+                          Expanded(child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              t('Instagram'),
+                              SizedBox(height: 10,),
+                              field(''),
+                              SizedBox(height: 20,),
+                              t('Twitter'),
+                              SizedBox(height: 10,),
+                              field(''),
+                            ],
+                          )),
+                        ],
+                      ),
+                      SizedBox(height: 20,),
+                      Row(
+                        children: [
+                          Expanded(child:Container(
+                            child: Row(
+                              children: [
+                                radi(context, 1),
+                                SizedBox(width: 3,),
+                                Expanded(child: Container(child: Text('Explorica Innovations',style: GoogleFonts.roboto(color: Colors.grey[300]
+                                ,fontSize: 12),
+                                ))),
+                                SizedBox(width: 7,),
+                                radi(context, 2),
+                                SizedBox(width: 3,),
+                                Expanded(child: Container(child: Text('Company Link',style: GoogleFonts.roboto(fontSize: 12),))),
+                              ],
+                            ),
+                          )),
+                          SizedBox(width: 10,),
+                          Expanded(child:Container(
+                            child: field('https://www.example.com'),
+                          )),
+                        ],
+                      ),
+                      SizedBox(height: 20,),
+                      Row(
+                        children: [
+                          ElevatedButton(onPressed: (){}, child:Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text('preview',style: TextStyle(color: Colors.white)),
+                          )),
+                          SizedBox(width: 15,),
+                          OutlineButton(onPressed: (){}, child:Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text('Cancel',),
+                          ))
+                        ],
+                      ),
+                      SizedBox(height: 100,),
                     ],
                   ),
               )),
@@ -151,16 +263,29 @@ class _PostJobState extends State<PostJob> {
       ),
     );
   }
+  Widget field1(String s){
+    return Container(
+      child: TextField(
+        decoration: InputDecoration(
+            border: InputBorder.none,
+            filled: true,
+            hintText: s,
+            suffixIcon: Icon(Icons.menu),
+            fillColor: Colors.grey[200]
+        ),
+      ),
+    );
+  }
 
  Widget bigfield() {
     return Container(
-      height: 300,
+      height: 200,
 
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            height: 50,
+            height: 40,
             color: Colors.grey[400],
             child: Row(
               children: [
@@ -170,12 +295,12 @@ class _PostJobState extends State<PostJob> {
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(Icons.keyboard_arrow_up,size: 157),
+                    Icon(Icons.keyboard_arrow_up,size: 17),
                     SizedBox(height: 5,),
                     Icon(Icons.keyboard_arrow_down_sharp,size: 17,),
                   ],
                 ),
-                SizedBox(width: 15,),
+                SizedBox(width: 25,),
                 attr('B'),
                 SizedBox(width: 10,),
                 attr('I'),
@@ -185,8 +310,6 @@ class _PostJobState extends State<PostJob> {
                 Icon(Icons.format_align_left,size: 17,),
                 SizedBox(width: 10,),
                 Icon(Icons.format_align_right,size: 17,),
-
-
               ],
             ),
           ),
@@ -194,7 +317,7 @@ class _PostJobState extends State<PostJob> {
             child: Container(
               color: Colors.grey[200],
               child:TextField(
-                maxLines: null,
+                maxLines:200,
                 decoration: InputDecoration(
                     border: InputBorder.none,
                     filled: true,
@@ -208,6 +331,16 @@ class _PostJobState extends State<PostJob> {
     );
  }
  Widget attr(String s){
-   return Text(s,style:GoogleFonts.italianno(fontWeight: FontWeight.bold,),);
+   return Text(s,style:GoogleFonts.italianno(fontWeight: FontWeight.bold,fontSize: 18),);
+ }
+
+ Widget radi(BuildContext context, int i,) {
+    return   Radio(
+        value:i,
+        groupValue:radio, onChanged:(v){
+      setState(() {
+        radio=v;
+      });
+    });
  }
 }
