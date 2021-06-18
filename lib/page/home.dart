@@ -8,10 +8,11 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:work/auth/signup.dart';
 import 'package:work/controller/authcontroller.dart';
+import 'package:work/job/postjob.dart';
 import 'package:work/page/body.dart';
 import 'package:work/page/job.dart';
 import 'package:work/project/project.dart';
-List page = [ Project(), Body(), Body(), Job(), Body()];
+List page = [ PostJob(), Body(), Body(), Job(), Body()];
 class Home extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();

@@ -62,8 +62,13 @@ class _ProjectState extends State<Project> {
             SizedBox(height: 20,),
             tag(size),
             SizedBox(height: 20,),
-            GridView.count(
-              crossAxisCount:size.width>1030? 4:3,
+            GridView(
+              gridDelegate:SliverGridDelegateWithMaxCrossAxisExtent(
+                maxCrossAxisExtent: 300,
+                mainAxisSpacing: 10,
+                childAspectRatio: 4/4.5,
+                crossAxisSpacing: 10,
+              ) ,
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
               children:p.map((e) => Pcard(size,e) ).toList(),

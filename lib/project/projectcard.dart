@@ -18,8 +18,6 @@ Widget Pcard(Size size, Mproject e){
       color: Colors.black,
       borderRadius: BorderRadius.circular(10),
       child: Container(
-        width:size.width/4-55,
-        height:320,
         decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(10)
@@ -27,18 +25,40 @@ Widget Pcard(Size size, Mproject e){
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              height:180,
-              decoration:BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  image: DecorationImage(
-                      image: AssetImage(e.assest),
-                      fit: BoxFit.cover
-                  )
+            Expanded(
+              child: Container(
+                decoration:BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    image: DecorationImage(
+                        image: AssetImage(e.assest),
+                        fit: BoxFit.cover
+                    )
+                ),
+                child: Column(
+                  children: [
+                    Expanded(
+                      child: Container(
+                        child: Stack(
+                          children: [
+                            Positioned(
+                              top: 5,
+                                right: 5,
+                                child:e.isvideo?Icon(Icons.video_call_outlined,color: Colors.white,):SizedBox()),
+                            Align(
+                                alignment: Alignment.center,
+                                child:e.isvideo?Icon(Icons.play_circle_fill_rounded,size:40,color: Colors.white,):SizedBox())
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
+              
             ),
-            Expanded(child: Container(
-              child: Padding(
+            Expanded(
+                child: Container(
+                child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

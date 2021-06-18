@@ -5,9 +5,10 @@ import 'package:work/component/cart.dart';
 import 'package:work/component/head.dart';
 import 'package:work/component/search.dart';
 import 'package:work/job/component/jobcard.dart';
+import 'package:work/job/postjob.dart';
 import 'package:work/job/search.dart';
 import 'package:work/model/jobm.dart';
-
+bool postjob = false;
 class Job extends StatefulWidget {
   @override
   _JobState createState() => _JobState();
@@ -16,11 +17,12 @@ class Job extends StatefulWidget {
 class _JobState extends State<Job> {
   Size size;
   List j = ['UX UI Designer','Remote Jobs','Fashion Desogner','Freshers Job'];
+
   @override
   Widget build(BuildContext context) {
     size = MediaQuery.of(context).size;
     return Scaffold(
-      body: SingleChildScrollView(
+      body:postjob?PostJob():SingleChildScrollView(
         child: Column(
           children: [
            Head(size),
@@ -36,7 +38,9 @@ class _JobState extends State<Job> {
                     maxLines: 2,
                   ),
                   ElevatedButton.icon(onPressed: (){
-
+                     setState(() {
+                       postjob=true;
+                     });
                    }, icon:Icon(Icons.post_add),
                       label:Text('Post a Job',
                         style: TextStyle(color: Colors.white),))
@@ -111,10 +115,15 @@ class _JobState extends State<Job> {
             SizedBox(height: 20,),
             Padding(
               padding: const EdgeInsets.only(left: 50,right: 50),
-              child: GridView.count(
+              child: GridView(
                 physics: NeverScrollableScrollPhysics(),
+                gridDelegate:SliverGridDelegateWithMaxCrossAxisExtent(
+                  maxCrossAxisExtent: 300,
+                  mainAxisSpacing: 10,
+                  childAspectRatio: 4/4.5,
+                  crossAxisSpacing: 10,
+                ) ,
                 shrinkWrap: true,
-                crossAxisCount:size.width>1030? 4:3,
                 children:jlist.map((e) => Padding(
                   padding: const EdgeInsets.all(13.0),
                   child: jobcard(size, e,context),
