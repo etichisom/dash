@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="19" height="20" viewBox="0 0 19 20">
+  <defs>
+    <clipPath id="clip-play">
+      <rect width="19" height="20"/>
+    </clipPath>
+  </defs>
+  <g id="play" clip-path="url(#clip-play)">
+    <rect width="19" height="20" fill="rgba(255,255,255,0)"/>
+    <g id="noun_play_3765435" transform="translate(-8.09 -6.659)">
+      <path id="Path_66" data-name="Path 66" d="M24.085,14.368,13.129,8.143a2.06,2.06,0,0,0-3.078,1.792V22.383a2.06,2.06,0,0,0,3.078,1.792L24.085,17.95a2.06,2.06,0,0,0,0-3.582Z" transform="translate(0)" fill="#fff" fill-rule="evenodd"/>
+    </g>
+  </g>
+</svg>
