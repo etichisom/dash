@@ -67,7 +67,9 @@ class Embed{
                 Expanded(child: Container()),
                 OutlineButton(
                   color: Colors.black,
-                  onPressed: (){},
+                  onPressed: (){
+                    Navigator.pop(context);
+                  },
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text('Cancel'),
