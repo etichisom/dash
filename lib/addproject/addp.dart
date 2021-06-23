@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'package:work/addproject/content.dart';
 import 'package:work/addproject/document.dart';
 import 'package:work/addproject/poblish.dart';
+import 'package:work/controller/pagecon.dart';
 
 class Ap extends StatefulWidget {
   @override
@@ -12,9 +14,11 @@ class Ap extends StatefulWidget {
 class _AddPState extends State<Ap> {
   int index = 0;
   Size size;
+  Pagecontrol pp;
   @override
   Widget build(BuildContext context) {
     size = MediaQuery.of(context).size;
+    pp = Provider.of<Pagecontrol>(context);
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.only(top: 30),
@@ -22,7 +26,13 @@ class _AddPState extends State<Ap> {
           children: [
             Expanded(
               flex: 1,
-                child: Container()),
+                child: Container(
+                  child: GestureDetector(
+                    onTap: (){
+                      pp.setadd(0);
+                    },
+                     ),
+                )),
             Expanded(
               flex: 4,
               child: Container(

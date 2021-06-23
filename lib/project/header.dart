@@ -41,7 +41,7 @@ Widget PHead(Size size, Pagecontrol p){
               SizedBox(height: 25,),
               RaisedButton(
                   onPressed: (){
-                    p.setadd(1);
+
                   },
                   color: Colors.white,
                   child:Padding(

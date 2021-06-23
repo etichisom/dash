@@ -6,9 +6,11 @@ import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'package:work/addproject/addp.dart';
 import 'package:work/auth/signup.dart';
 import 'package:work/controller/authcontroller.dart';
+import 'package:work/controller/pagecon.dart';
 import 'package:work/job/postjob.dart';
 import 'package:work/page/body.dart';
 import 'package:work/page/job.dart';
@@ -24,8 +26,10 @@ class _HomeState extends State<Home> {
   int currentindex =0;
   List hover = [ false, false, false, false, false];
   final Controller c = Get.put(Controller());
+  Pagecontrol pp;
   @override
   Widget build(BuildContext context) {
+    pp = Provider.of<Pagecontrol>(context);
     size = MediaQuery.of(context).size;
     return Scaffold(
      body: SafeArea(
@@ -58,27 +62,29 @@ class _HomeState extends State<Home> {
                         ),
                          SizedBox(width: 30,),
                          option(context, 0,'Project',Icon(Icons.settings,size: 17,
-                             color:currentindex==0?Colors.blue:
+                             color:pp.index==0?Colors.blue:
                              hover[0]?Colors.green:Colors.black)),
                          SizedBox(width: 15,),
                          option(context, 1,'Explore',Icon(Icons.flight_takeoff,size: 17,
-                             color:currentindex==1?Colors.blue:
+                             color:pp.index==1?Colors.blue:
                              hover[1]?Colors.green:Colors.black)),
                          SizedBox(width: 15,),
                          option(context, 2,'Blogs',Icon(Icons.my_library_books_outlined,size: 17,
-                             color:currentindex==2?Colors.blue:
+                             color:pp.index==2?Colors.blue:
                              hover[2]?Colors.green:Colors.black)),
                          SizedBox(width: 15,),
                          option(context, 3,'job',Icon(Icons.work,size: 17,
-                             color:currentindex==3?Colors.blue:
+                             color:pp.index==3?Colors.blue:
                              hover[3]?Colors.green:Colors.black)),
                          SizedBox(width: 15,),
                          option(context, 4,'learn',Icon(Icons.menu_book,size: 17,
-                             color:currentindex==4?Colors.blue:
+                             color:pp.index==4?Colors.blue:
                              hover[4]?Colors.green:Colors.black)),
                          Expanded(child: Container()),
                          c.count==0?signb(context):FlatButton.icon(icon: Icon(Icons.add_circle,color: Colors.blue,),
-                           onPressed: (){},
+                           onPressed: (){
+                           pp.setadd(1);
+                           },
                            label: Text('Add project',style: GoogleFonts.lato(color: Colors.lightBlue),),),
                          SizedBox(width: 6,),
                          c.count==0?login(context):SizedBox(),
@@ -101,7 +107,7 @@ class _HomeState extends State<Home> {
              Expanded(
                child: Container(
                    height: size.height,
-                   child:page[currentindex]),
+                   child:pp.add==1?Ap():page[pp.index]),
              ),
            ],
          )
@@ -111,10 +117,8 @@ class _HomeState extends State<Home> {
    Widget option(BuildContext context, int index, String name, Icon icon){
       return InkWell(
         onTap: (){
-          setState(() {
-            currentindex=index;
-          });
-        },
+          pp.setindex(index);
+          },
         onHover: (v){
           setState(() {
             hover[index] = v;
@@ -130,7 +134,7 @@ class _HomeState extends State<Home> {
                   icon,
                   AutoSizeText(
                     name,
-                    style: TextStyle(color:currentindex==index?Colors.blue:
+                    style: TextStyle(color:pp.index==index?Colors.blue:
                     hover[index]?Colors.green:Colors.black),
                     maxLines: 2,
                   )
@@ -139,7 +143,7 @@ class _HomeState extends State<Home> {
               Expanded(child: Container()),
              Container(width:60 ,
              height: 3,
-             color:currentindex==index?Colors.blue:hover[index]?Colors.green[200].withOpacity(0.5):Colors.transparent,)
+             color:pp.index==index?Colors.blue:hover[index]?Colors.green[200].withOpacity(0.5):Colors.transparent,)
             ],
           ),
         ),

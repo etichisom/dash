@@ -31,7 +31,7 @@ class _ProjectState extends State<Project> {
   Widget build(BuildContext context) {
     size = MediaQuery.of(context).size;
     pp = Provider.of<Pagecontrol>(context);
-    return pp.add==1?Ap(): Scaffold(
+    return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
