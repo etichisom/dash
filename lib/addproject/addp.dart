@@ -48,8 +48,21 @@ class _AddPState extends State<Ap> {
                             type: StepperType.horizontal,
                             physics: BouncingScrollPhysics(),
                             currentStep: index,
-                            onStepCancel: (){},
-                            onStepContinue: (){},
+                            onStepCancel: (){
+                              if(index > 0){
+                                setState(() {
+                                  index = index-1;
+                                });
+                              }
+                            },
+                            onStepContinue: (){
+                              if(index<2){
+                                setState(() {
+                                  index = index+1;
+                                });
+
+                              }
+                            },
                             onStepTapped: (i){
                               setState(() {
                                 index=i;
@@ -64,11 +77,10 @@ class _AddPState extends State<Ap> {
                                   height: size.height-300,
                                   width: size.width,
                                   child: Doc()),isActive:index==1?true:false),
-                              Step(title:Text('Category'), content: Text('pp'),isActive:index==2?true:false),
                               Step(title:Text('Publish'), content: Container(
                                   height: size.height-300,
                                   width: size.width,
-                                  child:Publish()),isActive:index==3?true:false),
+                                  child:Publish()),isActive:index==2?true:false),
 
                             ]),
                       ),
