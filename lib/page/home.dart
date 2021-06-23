@@ -13,7 +13,7 @@ import 'package:work/job/postjob.dart';
 import 'package:work/page/body.dart';
 import 'package:work/page/job.dart';
 import 'package:work/project/project.dart';
-List page = [ Ap(), Body(), Body(), Job(), Body()];
+List page = [ Project(), Body(), Body(), Job(), Body()];
 class Home extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();

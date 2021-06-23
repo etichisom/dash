@@ -1,3 +1,4 @@
+import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:work/component/wid.dart';
@@ -54,41 +55,48 @@ class _ContentState extends State<Content> {
                                   children:n.map((e) {
                                     return e==1?Padding(
                                       padding: const EdgeInsets.only(left:10,right: 8),
-                                      child: Container(
-                                        height:250,
-                                        width: 300,
-                                        decoration: BoxDecoration(
-                                          color: Colors.grey[200],
-                                            borderRadius: BorderRadius.circular(5),
-                                            border: Border.all(color: Colors.brown)
-                                        ),
-                                        child: Column(
-                                          mainAxisAlignment: MainAxisAlignment.center,
-                                          children: [
-                                            Row(
-                                              mainAxisAlignment: MainAxisAlignment.center,
-                                              children: [
-                                                Icon(Icons.image_outlined,size: 60,color: Colors.grey[400],),
-                                                SizedBox(width: 10,),
-                                                Icon(Icons.videocam_rounded,size: 60,color: Colors.grey[400],),
-                                              ],
-                                            ),
-                                            SizedBox(height: 5,),
-                                            Text('Add Photos or Videos.',style: GoogleFonts.roboto(fontSize: 12,color:Colors.grey[400]),),
-                                            SizedBox(height: 5,),
-                                            Text('You can add more than one multimedia file',style: GoogleFonts.roboto(fontSize: 12,color:Colors.grey[400]),),
-                                          ],
+                                      child: DottedBorder(
+                                        color: Colors.grey[600],
+                                        strokeWidth: 1,
+                                        child: Container(
+                                          height:250,
+                                          width: 300,
+                                          decoration: BoxDecoration(
+                                            color: Colors.grey[200],
+                                              borderRadius: BorderRadius.circular(5),
+
+                                          ),
+                                          child: Column(
+                                            mainAxisAlignment: MainAxisAlignment.center,
+                                            children: [
+                                              Row(
+                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                children: [
+                                                  Icon(Icons.image_outlined,size: 60,color: Colors.grey[400],),
+                                                  SizedBox(width: 10,),
+                                                  Icon(Icons.videocam_rounded,size: 60,color: Colors.grey[400],),
+                                                ],
+                                              ),
+                                              SizedBox(height: 5,),
+                                              Text('Add Photos or Videos.',style: GoogleFonts.roboto(fontSize: 12,color:Colors.grey[400]),),
+                                              SizedBox(height: 5,),
+                                              Text('You can add more than one multimedia file',style: GoogleFonts.roboto(fontSize: 12,color:Colors.grey[400]),),
+                                            ],
+                                          ),
                                         ),
                                       ),
                                     ):Padding(
                                       padding: const EdgeInsets.only(left:10,right: 8),
-                                      child: Container(
-                                        height:250,
-                                        width: 300,
-                                        decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.circular(5),
-                                            color: Colors.grey[200],
-                                            border: Border.all(color: Colors.green)
+                                      child: DottedBorder(
+                                        color: Colors.grey[600],
+                                        strokeWidth: 1,
+                                        child: Container(
+                                          height:250,
+                                          width: 300,
+                                          decoration: BoxDecoration(
+                                              borderRadius: BorderRadius.circular(5),
+                                              color: Colors.grey[200],
+                                          ),
                                         ),
                                       ),
                                     );

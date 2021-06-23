@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:work/controller/pagecon.dart';
 import 'package:work/page/home.dart';
 
 void main() {
@@ -7,9 +9,16 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Home(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<Pagecontrol>.value(
+          value: Pagecontrol(),
+        )
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: Home(),
+      ),
     );
   }
 }

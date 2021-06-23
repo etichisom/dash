@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:menu_button/menu_button.dart';
+import 'package:provider/provider.dart';
+import 'package:work/addproject/addp.dart';
 import 'package:work/component/cart.dart';
 import 'package:work/component/tag.dart';
 import 'package:work/model/projectm.dart';
 import 'package:work/project/cartsearch.dart';
 import 'package:work/project/header.dart';
 import 'package:work/project/projectcard.dart';
+import 'package:work/controller/pagecon.dart';
 
 class Project extends StatefulWidget {
   @override
@@ -23,15 +26,17 @@ class _ProjectState extends State<Project> {
     'Platform',
     'Medium',
   ];
+  Pagecontrol pp;
   @override
   Widget build(BuildContext context) {
     size = MediaQuery.of(context).size;
-    return Scaffold(
+    pp = Provider.of<Pagecontrol>(context);
+    return pp.add==1?Ap(): Scaffold(
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            PHead(size),
+            PHead(size,pp),
             SizedBox(height: 10,),
             Carts(size),
             SizedBox(height: 10,),

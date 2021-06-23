@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:work/component/wid.dart';
 
@@ -49,14 +51,34 @@ class Stly{
                         children: [
                           Expanded(child: Container(
                             color: Colors.grey[200],
-                            child: Padding(
-                              padding: const EdgeInsets.all(3.0),
-                              child: Row(
-                                children: [
-                                  Text('Color Palette',),
-                                  Expanded(child: Container()),
-                                  Icon(Icons.keyboard_arrow_down_sharp)
-                                ],
+                            child: InkWell(
+                              onTap: (){
+                                showDialog(context: context, builder: (context){
+                                  return SimpleDialog(
+                                    children: [
+                                   ColorPicker(
+                                      pickerColor: colors,
+                                      onColorChanged:(vvv){
+                                        setState((){
+                                          colors=vvv;
+                                          //Navigator.pop(context);
+                                        });
+                                      },
+                                     ),
+
+                                    ],
+                                  );
+                                });
+                              },
+                              child: Padding(
+                                padding: const EdgeInsets.all(3.0),
+                                child: Row(
+                                  children: [
+                                    Text('Color Palette',),
+                                    Expanded(child: Container()),
+                                    Icon(Icons.keyboard_arrow_down_sharp)
+                                  ],
+                                ),
                               ),
                             ),
                           )),
@@ -120,7 +142,7 @@ class Stly{
                 Expanded(child: Container()),
                 OutlineButton(
                   color: Colors.black,
-                  onPressed: (){},
+                  onPressed: (){Navigator.pop(context);},
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text('Cancel'),

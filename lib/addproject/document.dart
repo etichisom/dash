@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:work/addproject/dialog/embed.dart';
 import 'package:work/addproject/dialog/style.dart';
 import 'package:work/component/wid.dart';
@@ -23,37 +24,77 @@ class _DocState extends State<Doc> {
       body: ListView(
         children: [
            SizedBox(height: 20,),
-          Container(
-            height: 70,
-            child: ListView(
-              scrollDirection: Axis.horizontal,
-              children:dd.map((e){
-                return Padding(
+          Row(
+            children: [
+              Container(
+                width: 120,
+                height: 70,
+                child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: InkWell(
                     onTap: (){
-                      dia(context,e);
+
                     },
                     child: Container(
                       width: 120,
                       height: 70,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5),
-                        color: Colors.grey[300]
+                        color: Colors.white,
+                          borderRadius: BorderRadius.circular(5),
+                        boxShadow: [BoxShadow(color: Colors.black,blurRadius: 1)]
+
                       ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          e.icon,
+                         CircleAvatar(
+                           radius: 14,
+                             child: Text('T',style: GoogleFonts.
+                         italiana(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 18),)),
                           SizedBox(width: 4,),
-                          Text(e.name)
+                          Text('Text',style:GoogleFonts.roboto(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.blue),)
                         ],
                       ),
                     ),
                   ),
-                );
-              }).toList(),
-            ),
+                ),
+              ),
+              SizedBox(width: 10,),
+              Expanded(
+                child: Container(
+                  height: 70,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children:dd.map((e){
+                      return Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: InkWell(
+                          onTap: (){
+                            dia(context,e);
+                          },
+                          child: Container(
+                            width: 120,
+                            height: 70,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(5),
+                              color: Colors.grey[300]
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                e.icon,
+                                SizedBox(width: 4,),
+                                Text(e.name)
+                              ],
+                            ),
+                          ),
+                        ),
+                      );
+                    }).toList(),
+                  ),
+                ),
+              ),
+            ],
           ),
           SizedBox(height: 15,),
           bigfield('',Colors.white60,350)

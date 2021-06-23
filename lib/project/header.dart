@@ -2,8 +2,9 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:work/controller/pagecon.dart';
 
-Widget PHead(Size size){
+Widget PHead(Size size, Pagecontrol p){
   return  Container(
     height: 200,
     width: size.width,
@@ -39,7 +40,9 @@ Widget PHead(Size size){
               ),
               SizedBox(height: 25,),
               RaisedButton(
-                  onPressed: (){},
+                  onPressed: (){
+                    p.setadd(1);
+                  },
                   color: Colors.white,
                   child:Padding(
                     padding: const EdgeInsets.all(8.0),
