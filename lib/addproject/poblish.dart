@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'package:work/controller/pagecon.dart';
 
 class Publish extends StatefulWidget {
   @override
@@ -7,8 +9,10 @@ class Publish extends StatefulWidget {
 }
 
 class _PublishState extends State<Publish> {
+  Pagecontrol pp;
   @override
   Widget build(BuildContext context) {
+    pp = Provider.of<Pagecontrol>(context);
     return Scaffold(
       body: Column(
         children: [
@@ -42,8 +46,13 @@ class _PublishState extends State<Publish> {
                 style: GoogleFonts.roboto(color: Colors.white),),
             ),),
           SizedBox(height: 15,),
-          Text('Back to Projects page',
-            style: GoogleFonts.roboto(fontSize: 14,color: Colors.blue[200]),)
+          InkWell(
+            onTap: (){
+              pp.setadd(0);
+            },
+            child: Text('Back to Projects page',
+              style: GoogleFonts.roboto(fontSize: 14,color: Colors.blue[200]),),
+          )
         ],
       ),
     );
