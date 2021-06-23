@@ -9,7 +9,7 @@ import 'package:work/model/jobm.dart';
 class Box{
   BuildContext context;
    Size size;
-   Controller controller;
+   Authcontrol controller;
   int ind =0;
   List h = [false,false];
   String username,email,password;
@@ -315,6 +315,8 @@ class Box{
             ElevatedButton(onPressed: (){
              if(loginkey.currentState.validate()){
                print('vaild');
+               controller.authing(1);
+               Navigator.pop(context);
              }else{
                print('not valid');
              }

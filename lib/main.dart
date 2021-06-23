@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:work/controller/authcontroller.dart';
 import 'package:work/controller/pagecon.dart';
 import 'package:work/page/home.dart';
 
@@ -13,6 +14,9 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider<Pagecontrol>.value(
           value: Pagecontrol(),
+        ),
+        ChangeNotifierProvider<Authcontrol>.value(
+          value: Authcontrol(),
         )
       ],
       child: MaterialApp(

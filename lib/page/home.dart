@@ -25,11 +25,12 @@ class _HomeState extends State<Home> {
   Size size;
   int currentindex =0;
   List hover = [ false, false, false, false, false];
-  final Controller c = Get.put(Controller());
+   Authcontrol c  ;
   Pagecontrol pp;
   @override
   Widget build(BuildContext context) {
     pp = Provider.of<Pagecontrol>(context);
+    c = Provider.of<Authcontrol>(context);
     size = MediaQuery.of(context).size;
     return Scaffold(
      body: SafeArea(
@@ -81,19 +82,19 @@ class _HomeState extends State<Home> {
                              color:pp.index==4?Colors.blue:
                              hover[4]?Colors.green:Colors.black)),
                          Expanded(child: Container()),
-                         c.count==0?signb(context):FlatButton.icon(icon: Icon(Icons.add_circle,color: Colors.blue,),
+                         c.auth==0?signb(context):FlatButton.icon(icon: Icon(Icons.add_circle,color: Colors.blue,),
                            onPressed: (){
                            pp.setadd(1);
                            },
                            label: Text('Add project',style: GoogleFonts.lato(color: Colors.lightBlue),),),
                          SizedBox(width: 6,),
-                         c.count==0?login(context):SizedBox(),
+                         c.auth==0?login(context):SizedBox(),
                          SizedBox(width: 6,),
                          notif(context,Icon(Icons.notifications,size: 27,),7),
                          SizedBox(width: 13,),
                          notif(context,Icon(Icons.email,size: 27,),17),
                          SizedBox(width: 5,),
-                         c.count==0?Icon(Icons.person):CircleAvatar(
+                         c.auth==0?Icon(Icons.person):CircleAvatar(
                            radius: 15,
                            backgroundImage: AssetImage('assets/profile 1.png'),
                          ),

@@ -1,9 +1,11 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'package:work/component/cart.dart';
 import 'package:work/component/head.dart';
 import 'package:work/component/search.dart';
+import 'package:work/controller/pagecon.dart';
 import 'package:work/job/component/jobcard.dart';
 import 'package:work/job/postjob.dart';
 import 'package:work/job/search.dart';
@@ -17,12 +19,14 @@ class Job extends StatefulWidget {
 class _JobState extends State<Job> {
   Size size;
   List j = ['UX UI Designer','Remote Jobs','Fashion Desogner','Freshers Job'];
+  Pagecontrol pp;
 
   @override
   Widget build(BuildContext context) {
     size = MediaQuery.of(context).size;
+    pp = Provider.of<Pagecontrol>(context);
     return Scaffold(
-      body:postjob?PostJob():SingleChildScrollView(
+      body:pp.job==1?PostJob():SingleChildScrollView(
         child: Column(
           children: [
            Head(size),
@@ -39,7 +43,7 @@ class _JobState extends State<Job> {
                   ),
                   ElevatedButton.icon(onPressed: (){
                      setState(() {
-                       postjob=true;
+                       pp.setj(1);
                      });
                    }, icon:Icon(Icons.post_add),
                       label:Text('Post a Job',

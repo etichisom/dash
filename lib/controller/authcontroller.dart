@@ -1,15 +1,15 @@
 
 
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 
-class Controller extends GetxController{
-  var count = 1.obs;
+class Authcontrol extends ChangeNotifier{
+  var auth = 0;
   var s = 0.obs;
-  increment(int auth) {
-   return count=auth.obs;
+  authing(int au) {
+   auth =au;
+   notifyListeners();
   }
-  sets(int auth) {
-    return s=auth.obs;
-  }
+
 }
