@@ -8,6 +8,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:work/addproject/addp.dart';
+import 'package:work/auth/regcompany.dart';
 import 'package:work/auth/signup.dart';
 import 'package:work/controller/authcontroller.dart';
 import 'package:work/controller/pagecon.dart';
@@ -185,7 +186,7 @@ class _HomeState extends State<Home> {
   Widget signb(BuildContext context) {
     return InkWell(
       onTap: (){
-        Box(context,size,c).dia();
+        Box(context,size,c,1).dia();
       },
       child: Container(
         width: 80,
@@ -208,7 +209,9 @@ class _HomeState extends State<Home> {
   }
   Widget login(BuildContext context) {
     return InkWell(
-      onTap: (){},
+      onTap: (){
+        Box(context,size,c,0).dia();
+      },
       child: Container(
         width: 80,
         height: 30,
