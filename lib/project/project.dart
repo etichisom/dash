@@ -10,6 +10,7 @@ import 'package:work/project/cartsearch.dart';
 import 'package:work/project/header.dart';
 import 'package:work/project/projectcard.dart';
 import 'package:work/controller/pagecon.dart';
+import 'package:work/project/projectpage.dart';
 
 class Project extends StatefulWidget {
   @override
@@ -31,7 +32,7 @@ class _ProjectState extends State<Project> {
   Widget build(BuildContext context) {
     size = MediaQuery.of(context).size;
     pp = Provider.of<Pagecontrol>(context);
-    return Scaffold(
+    return pp.project !=null?Propage():Scaffold(
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -76,7 +77,7 @@ class _ProjectState extends State<Project> {
               ) ,
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
-              children:p.map((e) => Pcard(size,e) ).toList(),
+              children:p.map((e) => Pcard(size,e,pp) ).toList(),
             )
           ],
         ),

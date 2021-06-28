@@ -338,7 +338,7 @@ class Box{
              }else{
                print('not valid');
              }
-            }, child:Text('Login',style: TextStyle(color: Colors.white),)),
+             }, child:Text('Login',style: TextStyle(color: Colors.white),)),
             SizedBox(height: 10,),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,

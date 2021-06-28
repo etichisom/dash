@@ -1,9 +1,11 @@
 import 'package:flutter/cupertino.dart';
+import 'package:work/model/projectm.dart';
 
 class Pagecontrol extends ChangeNotifier{
   int add =0;
   int job = 0;
   int index = 0;
+  Mproject project = p[1] ;
   int getadd(){
     return add;
   }
@@ -20,6 +22,10 @@ class Pagecontrol extends ChangeNotifier{
   }
   setj(int a){
     job=a;
+    notifyListeners();
+  }
+  setp(Mproject a){
+    project=a;
     notifyListeners();
   }
 }

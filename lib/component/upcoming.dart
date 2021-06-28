@@ -43,14 +43,10 @@ Widget upcome(Size size, Up e){
                     left: 5,
                     child: Tooltip(
                       message: 'Attn Developer: Add to calender will appears \n when user hovers on the card',
-                      child: SizedBox(
-                        height: 20,
-                        width: 100,
-                        child: FlatButton.icon(onPressed: (){},
-                            color: Colors.grey[400],
-                            icon:Icon(Icons.calendar_today_sharp,size: 8,),
-                            label: Text('Add to calender',style: TextStyle(fontSize: 8),)),
-                      ),
+                      child: FlatButton.icon(onPressed: (){},
+                          color: Colors.grey[400],
+                          icon:Icon(Icons.calendar_today_sharp,size: 8,),
+                          label: Text('Add to calender',style: TextStyle(fontSize: 8),)),
                     ),
                   ),
                 ],

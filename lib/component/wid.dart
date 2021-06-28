@@ -75,3 +75,6 @@ Widget bigfield(String v,Color colors,double h ) {
 Widget attr(String s){
   return Text(s,style:GoogleFonts.italianno(fontWeight: FontWeight.bold,fontSize: 18),);
 }
+Widget text(String s){
+  return Text(s,style:GoogleFonts.roboto(fontSize: 16,color: Colors.blue),);
+}
