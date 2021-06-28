@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24.904" height="23.866" viewBox="0 0 24.904 23.866">
+  <g id="like" transform="translate(0)">
+    <g id="like-2" data-name="like" transform="translate(0 0)">
+      <g id="Group_22" data-name="Group 22" transform="translate(0 10.377)">
+        <g id="Group_21" data-name="Group 21">
+          <path id="Path_544" data-name="Path 544" d="M2.594,224A2.6,2.6,0,0,0,0,226.594v8.3a2.6,2.6,0,0,0,2.594,2.594H5.707a2.575,2.575,0,0,0,1.556-.525V224Z" transform="translate(0 -224)" fill="#777"/>
+        </g>
+      </g>
+      <g id="Group_24" data-name="Group 24" transform="translate(8.301 0)">
+        <g id="Group_23" data-name="Group 23" transform="translate(0 0)">
+          <path id="Path_545" data-name="Path 545" d="M187.27,24.935a2.3,2.3,0,0,0-.676-1.633,2.576,2.576,0,0,0,.664-1.981,2.682,2.682,0,0,0-2.706-2.352h-6.41a14.92,14.92,0,0,0,.826-4.151c0-2.251-1.912-4.151-3.113-4.151a3.264,3.264,0,0,0-1.881.632.521.521,0,0,0-.194.406v3.519L170.792,21.7l-.124.063V32.882a6.8,6.8,0,0,0,2.594.613h9.525a2.387,2.387,0,0,0,2.351-1.813,2.334,2.334,0,0,0-.188-1.559,2.324,2.324,0,0,0,1.039-3.114A2.323,2.323,0,0,0,187.27,24.935Z" transform="translate(-170.667 -10.667)" fill="#777"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
