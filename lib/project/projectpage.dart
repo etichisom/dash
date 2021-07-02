@@ -53,11 +53,9 @@ class _PropageState extends State<Propage>with SingleTickerProviderStateMixin {
                         Expanded(child: Container(
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
-                            image: DecorationImage(
-                              image: AssetImage('p/img_1_project.png'),
-                              fit: BoxFit.cover
-                            )
+
                           ),
+                          child: VideoPlayer(vcontroller),
                         )),
                           SizedBox(height: 15,),
                           Container(
@@ -347,6 +345,7 @@ class _PropageState extends State<Propage>with SingleTickerProviderStateMixin {
       ..initialize().then((_) {
         vcontroller.play();
         setState(() {});
+
       });
   }
 }
