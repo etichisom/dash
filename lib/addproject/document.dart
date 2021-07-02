@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:markdown_editable_textinput/markdown_text_input.dart';
 import 'package:work/addproject/dialog/embed.dart';
 import 'package:work/addproject/dialog/style.dart';
 import 'package:work/component/wid.dart';
@@ -18,6 +19,7 @@ class _DocState extends State<Doc> {
     Docu('Embed', Icon(Icons.accessibility)),
     Docu('Styles', Icon(Icons.color_lens_outlined))
   ];
+  String dec = '';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -97,7 +99,14 @@ class _DocState extends State<Doc> {
             ],
           ),
           SizedBox(height: 15,),
-          bigfield('',Colors.white60,350)
+          MarkdownTextInput(
+                (String value) => setState(() {
+                  dec=value;
+                }),
+            dec,
+            label: 'Description',
+            maxLines: 9,
+          ),
         ],
       ),
     );

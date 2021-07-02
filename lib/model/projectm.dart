@@ -14,9 +14,9 @@ class Mproject{
   
 }
 List<Mproject> p =[
-  Mproject('assets/vidoe_3.png', 'Falcon Project with various alloys',
+  Mproject('assets/vidoe_3.png', 'Future technology of GPS and Motion Sensors with easy tutorial explanations',
       'John Wick', 'assets/profile 6.png', ['Robotics','Electric'], 100, 20,false,false),
-  Mproject('assets/vidoe_3.png', 'Falcon Project with various alloys',
+  Mproject('assets/vidoe_3.png', 'Future technology of GPS and Motion Sensors with easy tutorial explanations',
       'John Wick', 'assets/profile 6.png', ['Robotics','Electric'], 100, 20,true,false),
   Mproject('assets/vidoe_3.png', 'Falcon Project with various alloys',
       'John Wick', 'assets/profile 6.png', ['Robotics','Electric'], 100, 20,false,false),

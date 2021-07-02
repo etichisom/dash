@@ -5,7 +5,9 @@ class Pagecontrol extends ChangeNotifier{
   int add =0;
   int job = 0;
   int index = 0;
-  Mproject project = p[1] ;
+  Mproject project = p[0] ;
+  double slider = 30;
+  int playpause = 0;
   int getadd(){
     return add;
   }
@@ -26,6 +28,14 @@ class Pagecontrol extends ChangeNotifier{
   }
   setp(Mproject a){
     project=a;
+    notifyListeners();
+  }
+  setslider(double d){
+    slider =d;
+    notifyListeners();
+  }
+  setplaypause(int i){
+    playpause =i;
     notifyListeners();
   }
 }

@@ -18,10 +18,8 @@ Widget Pcard(Size size, Mproject e,Pagecontrol p){
       onTap: (){
         p.setp(e);
       },
-      child: PhysicalModel(
-        elevation: 5,
-        color: Colors.black,
-        borderRadius: BorderRadius.circular(10),
+      child: Card(
+        elevation: 2,
         child: Container(
           decoration: BoxDecoration(
               color: Colors.white,
@@ -135,4 +133,27 @@ Widget Pcard(Size size, Mproject e,Pagecontrol p){
       ),
     ),
   );
+}
+Widget chip(Mproject e,Size size){
+  return  Container(
+      width:size.width/2-40,
+      height: 30,
+      child: ListView(
+        scrollDirection: Axis.horizontal,
+        children:e.list.map((el){
+          return  Padding(
+            padding: const EdgeInsets.all(3.0),
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: Colors.grey[100],
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: Text(el,style: TextStyle(fontSize: 12,fontWeight: FontWeight.bold),),
+              ),
+            ),
+          );
+        }).toList(),
+      ));
 }

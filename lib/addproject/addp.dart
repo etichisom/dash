@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:work/addproject/cartgory.dart';
 import 'package:work/addproject/content.dart';
 import 'package:work/addproject/document.dart';
 import 'package:work/addproject/poblish.dart';
@@ -77,10 +78,14 @@ class _AddPState extends State<Ap> {
                                   height: size.height-300,
                                   width: size.width,
                                   child: Doc()),isActive:index==1?true:false),
+                              Step(title:Text('Category'), content:Container(
+                                  height: size.height,
+                                  width: size.width,
+                                  child: Cart()),isActive:index==2?true:false),
                               Step(title:Text('Publish'), content: Container(
                                   height: size.height-300,
                                   width: size.width,
-                                  child:Publish()),isActive:index==2?true:false),
+                                  child:Publish()),isActive:index==3?true:false),
 
                             ]),
                       ),

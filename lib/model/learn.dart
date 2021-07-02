@@ -16,6 +16,9 @@ List<Learnc> l = [
 List t = [
   'Automobile','New Classes','Car Motor'
 ];
+List tl = [
+  'Automobile','New Classes','Car Motor'
+];
 List tt = [
   'Mechanical','New Projects','Robotics'
 ];
