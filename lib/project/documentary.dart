@@ -9,6 +9,8 @@ import 'package:work/global/global.dart';
 import 'package:work/model/learn.dart';
 import 'package:work/project/projectdoc.dart';
 
+
+
 class Documentary extends StatefulWidget {
   @override
   _DoucumentaryState createState() => _DoucumentaryState();
@@ -17,6 +19,7 @@ class Documentary extends StatefulWidget {
 class _DoucumentaryState extends State<Documentary> {
   Size size;
   Pagecontrol pp;
+
   @override
   Widget build(BuildContext context) {
     size = MediaQuery.of(context).size;

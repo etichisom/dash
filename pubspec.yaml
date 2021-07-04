@@ -21,6 +21,7 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+  flick_video_player:
   auto_size_text: ^2.1.0
   flutter_feather_icons: ^2.0.0+1
   google_fonts: ^2.1.0
@@ -31,10 +32,10 @@ dependencies:
   flutter_colorpicker: ^0.3.5
   markdown_editable_textinput: ^2.0.0
   flutter_markdown: ^0.6.2
-  video_player: ^2.1.6
+  video_player:
   #video_player: ^2.1.6
   dotted_border: ^2.0.0
-  provider: ^4.0.4
+  provider:
   flutter:
     sdk: flutter
 

@@ -1,5 +1,5 @@
+import 'package:flick_video_player/flick_video_player.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -23,7 +23,7 @@ class _PropageState extends State<Propage>with SingleTickerProviderStateMixin {
   Size size;
   Pagecontrol pp;
   TabController controller;
-  VideoPlayerController vcontroller;
+  FlickManager flickManager;
 
   int index =0;
   List<Widget> w = [About(),Discover(),Comment()];
@@ -55,7 +55,9 @@ class _PropageState extends State<Propage>with SingleTickerProviderStateMixin {
                             borderRadius: BorderRadius.circular(20),
 
                           ),
-                          child: VideoPlayer(vcontroller),
+                          child: FlickVideoPlayer(
+                              flickManager: flickManager
+                          ),
                         )),
                           SizedBox(height: 15,),
                           Container(
@@ -339,13 +341,11 @@ class _PropageState extends State<Propage>with SingleTickerProviderStateMixin {
   void initState() {
     // TODO: implement initState
     super.initState();
-    controller=TabController(length: 3, vsync:this);
-    vcontroller = VideoPlayerController.network(
-        'https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_20mb.mp4')
-      ..initialize().then((_) {
-        vcontroller.play();
-        setState(() {});
+    controller = TabController(length: 3, vsync: this);
+    flickManager = FlickManager(
+      videoPlayerController:
+      VideoPlayerController.network("https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_20mb.mp4"),
+    );
 
-      });
   }
 }
