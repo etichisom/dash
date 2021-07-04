@@ -1,4 +1,5 @@
-import 'package:flick_video_player/flick_video_player.dart';
+
+import 'package:chewie/chewie.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -23,10 +24,12 @@ class _PropageState extends State<Propage>with SingleTickerProviderStateMixin {
   Size size;
   Pagecontrol pp;
   TabController controller;
-  FlickManager flickManager;
+  final videoPlayerController = VideoPlayerController.network(
+      'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4');
 
   int index =0;
   List<Widget> w = [About(),Discover(),Comment()];
+  ChewieController chewieController ;
   @override
   Widget build(BuildContext context) {
    size = MediaQuery.of(context).size;
@@ -55,9 +58,10 @@ class _PropageState extends State<Propage>with SingleTickerProviderStateMixin {
                             borderRadius: BorderRadius.circular(20),
 
                           ),
-                          child: FlickVideoPlayer(
-                              flickManager: flickManager
+                          child: Chewie(
+                            controller: chewieController,
                           ),
+
                         )),
                           SizedBox(height: 15,),
                           Container(
@@ -342,15 +346,21 @@ class _PropageState extends State<Propage>with SingleTickerProviderStateMixin {
     // TODO: implement initState
     super.initState();
     controller = TabController(length: 3, vsync: this);
-    flickManager = FlickManager(
-      videoPlayerController:
-      VideoPlayerController.network("https://r3---sn-5hnekn7k.googlevideo.com/videoplayback?expire=1625434124&ei=q9PhYPOvPPe6mLAPrtSEMA&ip=186.103.220.235&id=o-AMEVSHCxg9RZ3WOS4ir4HiJlLjbPjiVWDYp6C_0V7iGN&itag=18&source=youtube&requiressl=yes&vprv=1&mime=video%2Fmp4&ns=B0BnAyxYXD6juDhL2EjNtpwG&gir=yes&clen=1973073&ratebypass=yes&dur=28.421&lmt=1561400136751460&fexp=24001373,24007246&c=WEB&txp=5431432&n=M-ZxGPXYiUAaKN&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cvprv%2Cmime%2Cns%2Cgir%2Cclen%2Cratebypass%2Cdur%2Clmt&sig=AOq0QJ8wRgIhAISalMQkUBw1af_tNHaWS2LDm-R6dWK6OOU_y4Wz1QVoAiEAv6wbH1pjfzBYLnuy2wXxbF3D3FldoEh22tbm_EbVq-g%3D&rm=sn-uxgg5-njae77s,sn-uxgg5-njaed7s&req_id=afad269529f5a3ee&redirect_counter=3&cm2rm=sn-njaee7e&cms_redirect=yes&mh=fi&mip=197.210.79.110&mm=34&mn=sn-5hnekn7k&ms=ltu&mt=1625421876&mv=m&mvi=3&pl=24&lsparams=mh,mip,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRAIgLfDggjONxgJUm6J_V_qiTVRITQbwzGSbdz3p3KJyNZACID_cewn-IIooa_YEzyaSUD0-coTBDdby3yNS_gPmXC1g"),
-    );
+    intialieze();
 
   }
   @override
   void dispose() {
-    flickManager.dispose();
+
     super.dispose();
+  }
+
+  void intialieze() async{
+    await videoPlayerController.initialize();
+   chewieController = ChewieController(
+      videoPlayerController: videoPlayerController,
+      autoPlay: true,
+      looping: true,
+    );
   }
 }
