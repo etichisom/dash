@@ -24,9 +24,7 @@ class _PropageState extends State<Propage>with SingleTickerProviderStateMixin {
   Size size;
   Pagecontrol pp;
   TabController controller;
-  final videoPlayerController = VideoPlayerController.network(
-      'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4');
-
+  VideoPlayerController videoPlayerController ;
   int index =0;
   List<Widget> w = [About(),Discover(),Comment()];
   ChewieController chewieController ;
@@ -58,7 +56,7 @@ class _PropageState extends State<Propage>with SingleTickerProviderStateMixin {
                             borderRadius: BorderRadius.circular(20),
 
                           ),
-                          child: Chewie(
+                          child:videoPlayerController.hasListeners==false?SizedBox():Chewie(
                             controller: chewieController,
                           ),
 
@@ -347,6 +345,9 @@ class _PropageState extends State<Propage>with SingleTickerProviderStateMixin {
     super.initState();
     controller = TabController(length: 3, vsync: this);
     intialieze();
+    setState(() {
+
+    });
 
   }
   @override
@@ -356,6 +357,9 @@ class _PropageState extends State<Propage>with SingleTickerProviderStateMixin {
   }
 
   void intialieze() async{
+    videoPlayerController = VideoPlayerController.network(
+        'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4');
+
     await videoPlayerController.initialize();
    chewieController = ChewieController(
       videoPlayerController: videoPlayerController,
