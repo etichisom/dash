@@ -15,17 +15,10 @@ class _CommentState extends State<Comment> {
     return Padding(
       padding: const EdgeInsets.only(left: 30,right: 200,top: 10),
       child: Column(
-   children: [
-       MarkdownTextInput(
-             (String value) => setState(() {
-           dec=value;
-         }),
-         dec,
-         label: 'Description',
-         maxLines: 5,
-       ),
-       SizedBox(height: 10,),
-       Row(
+          children: [
+
+          SizedBox(height: 10,),
+           Row(
          mainAxisAlignment: MainAxisAlignment.end,
          children: [
            OutlineButton(onPressed: (){},

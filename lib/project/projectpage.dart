@@ -1,5 +1,4 @@
-
-import 'package:chewie/chewie.dart';
+import 'package:flick_video_player/flick_video_player.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -24,10 +23,9 @@ class _PropageState extends State<Propage>with SingleTickerProviderStateMixin {
   Size size;
   Pagecontrol pp;
   TabController controller;
-  VideoPlayerController videoPlayerController ;
+  FlickManager flickManager;
   int index =0;
   List<Widget> w = [About(),Discover(),Comment()];
-  ChewieController chewieController ;
   @override
   Widget build(BuildContext context) {
    size = MediaQuery.of(context).size;
@@ -56,10 +54,9 @@ class _PropageState extends State<Propage>with SingleTickerProviderStateMixin {
                             borderRadius: BorderRadius.circular(20),
 
                           ),
-                          child:videoPlayerController.hasListeners==false?SizedBox():Chewie(
-                            controller: chewieController,
+                          child: FlickVideoPlayer(
+                              flickManager: flickManager
                           ),
-
                         )),
                           SizedBox(height: 15,),
                           Container(
@@ -344,27 +341,17 @@ class _PropageState extends State<Propage>with SingleTickerProviderStateMixin {
     // TODO: implement initState
     super.initState();
     controller = TabController(length: 3, vsync: this);
-    intialieze();
-    setState(() {
+    flickManager = FlickManager(
+      videoPlayerController:
+      VideoPlayerController.network("https://assets.mixkit.co/videos/preview/mixkit-forest-stream-in-the-sunlight-529-large.mp4"),
+    );
+    flickManager.flickControlManager.autoResume();
 
-    });
 
   }
   @override
   void dispose() {
-
+    flickManager.dispose();
     super.dispose();
-  }
-
-  void intialieze() async{
-    videoPlayerController = VideoPlayerController.network(
-        'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4');
-
-    await videoPlayerController.initialize();
-   chewieController = ChewieController(
-      videoPlayerController: videoPlayerController,
-      autoPlay: true,
-      looping: true,
-    );
   }
 }

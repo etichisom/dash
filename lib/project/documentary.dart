@@ -19,7 +19,6 @@ class Documentary extends StatefulWidget {
 class _DoucumentaryState extends State<Documentary> {
   Size size;
   Pagecontrol pp;
-
   @override
   Widget build(BuildContext context) {
     size = MediaQuery.of(context).size;

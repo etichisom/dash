@@ -23,6 +23,19 @@ Widget fieldicon(String s){
     ),
   );
 }
+Widget fieldicon2(String s,Icon icon){
+  return Container(
+    child: TextField(
+      decoration: InputDecoration(
+          border: InputBorder.none,
+          filled: true,
+          hintText: s,
+          suffixIcon: icon,
+          fillColor: Colors.grey[200]
+      ),
+    ),
+  );
+}
 Widget field(String s){
   return Container(
     child: TextField(

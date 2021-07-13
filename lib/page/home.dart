@@ -15,9 +15,11 @@ import 'package:work/controller/pagecon.dart';
 import 'package:work/job/postjob.dart';
 import 'package:work/page/body.dart';
 import 'package:work/page/job.dart';
+import 'package:work/profile/editprofile.dart';
+import 'package:work/profile/profile.dart';
 import 'package:work/project/project.dart';
 import 'package:work/project/projectpage.dart';
-List page = [ Project(), Propage(), Body(), Job(), Body()];
+List page = [ Profile(), Propage(), Body(), Job(), Body()];
 class Home extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();

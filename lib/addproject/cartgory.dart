@@ -61,7 +61,8 @@ class _CartState extends State<Cart> {
                     ),
                     SizedBox(height: 30,),
                     Text('Add Team and Team Members',
-                        style: GoogleFonts.roboto(fontSize: 14,color:Colors.blue))
+                        style: GoogleFonts.roboto(fontSize: 14,color:Colors.blue)),
+
                   ],
                 ),
 
@@ -69,6 +70,7 @@ class _CartState extends State<Cart> {
               SizedBox(width: 20,),
               Expanded(child: Container(
                    child: Column(
+                     crossAxisAlignment: CrossAxisAlignment.start,
                        children: [
                          SizedBox(height: 30,),
                             t('Tags'),
