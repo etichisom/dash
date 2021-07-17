@@ -30,7 +30,7 @@ Widget pmcard(Size size, pm e,Pagecontrol p){
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Expanded(
-                flex: 2,
+                flex: 1,
                 child: Container(
                   decoration:BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
@@ -39,22 +39,26 @@ Widget pmcard(Size size, pm e,Pagecontrol p){
                           fit: BoxFit.cover
                       )
                   ),
-                  child: Column(
+                  child: Row(
                     children: [
-                      Expanded(
-                        child: Container(
-                          child: Stack(
-                            children: [
-                              Positioned(
-                                  top: 5,
-                                  right: 5,
-                                  child:e.isvideo?Icon(Icons.video_call_outlined,color: Colors.white,):SizedBox()),
-                              Align(
-                                  alignment: Alignment.center,
-                                  child:e.isvideo?Icon(Icons.play_circle_fill_rounded,size:40,color: Colors.white,):SizedBox())
-                            ],
+                      Column(
+                        children: [
+                          Expanded(
+                            child: Container(
+                              child: Stack(
+                                children: [
+                                  Positioned(
+                                      top: 5,
+                                      right: 5,
+                                      child:e.isvideo?Icon(Icons.video_call_outlined,color: Colors.white,):SizedBox()),
+                                  Align(
+                                      alignment: Alignment.center,
+                                      child:e.isvideo?Icon(Icons.play_circle_fill_rounded,size:40,color: Colors.white,):SizedBox())
+                                ],
+                              ),
+                            ),
                           ),
-                        ),
+                        ],
                       ),
                     ],
                   ),

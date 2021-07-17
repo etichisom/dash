@@ -13,7 +13,7 @@ Widget livetab (Size size, Pagecontrol pp ){
     gridDelegate:SliverGridDelegateWithMaxCrossAxisExtent(
       maxCrossAxisExtent: 300,
       mainAxisSpacing: 10,
-      childAspectRatio: 3/3,
+      childAspectRatio: 4/4,
       crossAxisSpacing: 10,
     ) ,
     shrinkWrap: true,

@@ -17,13 +17,13 @@ Widget Lcard( Size size,Lives e, Pagecontrol pp){
       child: Column(
         children: [
           Expanded(
-          flex: 2,
+          flex: 1,
           child: Container(
           decoration:BoxDecoration(
           borderRadius: BorderRadius.circular(10),
             image: DecorationImage(
              image: AssetImage(e.assest),
-                   fit: BoxFit.contain
+                   fit: BoxFit.cover
                 )
                  ),
             child:  Column(

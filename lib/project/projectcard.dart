@@ -29,7 +29,7 @@ Widget Pcard(Size size, Mproject e,Pagecontrol p){
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Expanded(
-                flex: 2,
+                flex:1,
                 child: Container(
                   decoration:BoxDecoration(
                       borderRadius: BorderRadius.circular(10),

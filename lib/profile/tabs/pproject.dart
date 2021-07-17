@@ -11,7 +11,7 @@ Widget ptab (Size size, Pagecontrol pp ){
     gridDelegate:SliverGridDelegateWithMaxCrossAxisExtent(
       maxCrossAxisExtent: 300,
       mainAxisSpacing: 10,
-      childAspectRatio: 3/3,
+      childAspectRatio: 4/5,
       crossAxisSpacing: 10,
     ) ,
     shrinkWrap: true,
