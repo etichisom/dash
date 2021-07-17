@@ -53,13 +53,14 @@ class _ProfileState extends State<Profile>with SingleTickerProviderStateMixin {
                             children: [
                               SizedBox(height: 90,),
                               Padding(
-                                padding: const EdgeInsets.all(60.0),
+                                padding: const EdgeInsets.all(20.0),
                                 child: PhysicalModel(
                                   elevation: 3,
                                   borderRadius: BorderRadius.circular(10),
                                   color: Colors.grey,
                                   child: Container(
                                     height: 680,
+                                    width: 300,
                                     decoration: BoxDecoration(
                                       color: Colors.white,
                                       borderRadius: BorderRadius.circular(10)
