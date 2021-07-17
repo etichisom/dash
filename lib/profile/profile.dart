@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -31,75 +33,93 @@ class _ProfileState extends State<Profile>with SingleTickerProviderStateMixin {
     return Scaffold(
       body: ListView(
         children: [
-          SizedBox(height:50,),
-          Container(
-            height: size.height ,
-            child: Row(
-              children: [
-                Expanded(
-                  flex: 2,
-                    child: Container(
-                      child: ListView(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(60.0),
-                            child: PhysicalModel(
-                              elevation: 3,
-                              borderRadius: BorderRadius.circular(20),
-                              color: Colors.grey,
-                              child: Container(
-                                height: 680,
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(20)
+          Stack(
+            children: [
+              Container(
+                height: 190,
+                width: size.width,
+                child: Image.asset('img/cover_img_1.png',fit: BoxFit.fitWidth,),
+              ),
+              SizedBox(height:50,),
+              Container(
+                height: size.height+500 ,
+                child: Row(
+                  children: [
+                    Expanded(
+                      flex: 2,
+                        child: Container(
+                          child: ListView(
+                            physics: NeverScrollableScrollPhysics(),
+                            children: [
+                              SizedBox(height: 90,),
+                              Padding(
+                                padding: const EdgeInsets.all(60.0),
+                                child: PhysicalModel(
+                                  elevation: 3,
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: Colors.grey,
+                                  child: Container(
+                                    height: 680,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(10)
 
+                                    ),
+                                    child: pcard2(size),
+
+                                  ),
                                 ),
-                                child: pcard2(size),
-
                               ),
-                            ),
+                            ],
                           ),
-                        ],
-                      ),
-                    )),
-                Expanded(
-                    flex: 4,
-                    child: Container(
-                      child: Column(
-                        children: [
-                         Row(
-                           children: [
+                        )),
+                    Expanded(
+                        flex: 4,
+                        child: Container(
+                          child: Column(
+                            children: [
+                              SizedBox(height: 210,),
+                             Row(
+                               children: [
 
-                             tabtext('Projects', 0),
-                             tabtext('Live Streams', 1),
-                             tabtext('saved',2),
-                           ],
-                         ),
-                          Expanded(child:Container(
-                            child: t[index],
-                          )),
-                          SizedBox(height: 50,),
-                          FlatButton(onPressed: (){},
-                              color: Colors.blue.withOpacity(0.3),
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10)
+                                 tabtext('Projects', 0),
+                                 tabtext('Live Streams', 1),
+                                 tabtext('saved',2),
+                               ],
+                             ),
+
+                              Container(
+                                height: 500,
+                                child: ListView(
+                                  children: [
+                                    t[index],
+                                  ],
+                                ),
                               ),
-                              child: Padding(
-                                padding: const EdgeInsets.only(left: 8,right: 8),
-                                child: Text('Load More',style: GoogleFonts.lato(
-                                    color: Colors.blue[500]
-                                ),),
-                              )
-                          ),
-                          SizedBox(height: 20,)
+                              SizedBox(height: 50,),
+                              FlatButton(onPressed: (){},
+                                  color: Colors.blue.withOpacity(0.3),
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10)
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(left: 8,right: 8),
+                                    child: Text('Load More',style: GoogleFonts.lato(
+                                        color: Colors.blue[500]
+                                    ),),
+                                  )
+                              ),
+                              SizedBox(height: 20,)
 
-                        ],
-                      ),
-                    ))
-              ],
-            ),
+                            ],
+                          ),
+                        ))
+                  ],
+                ),
+              ),
+              SizedBox(height: 20,)
+            ],
           ),
-          SizedBox(height: 20,)
         ],
       ),
     );

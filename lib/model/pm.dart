@@ -13,17 +13,17 @@ class pm{
 
 }
 List<pm> pmp =[
-  pm('assets/vidoe_3.png', 'Future technology of GPS and Motion Sensors with easy tutorial explanations',
+  pm('img/project_img_1.png', 'Future technology of GPS and Motion Sensors with easy tutorial explanations',
       'John Wick', 100, 20,false,false,true),
-  pm('assets/vidoe_3.png', 'Future technology of GPS and Motion Sensors with easy tutorial explanations',
+  pm('img/project_img_2.png', 'Future technology of GPS and Motion Sensors with easy tutorial explanations',
+      'John Wick', 100, 20,false,false,true),
+  pm('img/project_img_3.png', 'Future technology of GPS and Motion Sensors with easy tutorial explanations',
       'John Wick', 100, 20,false,false,false),
-  pm('assets/vidoe_3.png', 'Future technology of GPS and Motion Sensors with easy tutorial explanations',
-      'John Wick', 100, 20,false,false,false),
-  pm('assets/vidoe_3.png', 'Future technology of GPS and Motion Sensors with easy tutorial explanations',
+  pm('img/project_img_4.png', 'Future technology of GPS and Motion Sensors with easy tutorial explanations',
       'John Wick', 100, 20,false,false,true),
-  pm('assets/vidoe_3.png', 'Future technology of GPS and Motion Sensors with easy tutorial explanations',
+  pm('img/project_img_5.png', 'Future technology of GPS and Motion Sensors with easy tutorial explanations',
       'John Wick', 100, 20,false,false,true),
-  pm('assets/vidoe_3.png', 'Future technology of GPS and Motion Sensors with easy tutorial explanations',
+  pm('img/project_img_6.png', 'Future technology of GPS and Motion Sensors with easy tutorial explanations',
       'John Wick', 100, 20,false,false,false),
 
 ];

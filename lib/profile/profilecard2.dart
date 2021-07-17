@@ -26,7 +26,7 @@ Widget pcard2(Size size){
                 decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     image: DecorationImage(
-                        image: AssetImage('assets/upcoming 4.png'),
+                        image: AssetImage('img/project_img_1.png'),
                         fit: BoxFit.contain
                     )
                 ),

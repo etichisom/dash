@@ -10,11 +10,11 @@ class Lives{
 
 }
 List<Lives> live =[
-  Lives('assets/live 3.png', 'Tony Stark', 'Live Guides for Car Racers', 'Apr 25, 2021',
+  Lives('assets/upcoming 2.png', 'Tony Stark', 'Live Guides for Car Racers', 'Apr 25, 2021',
       '01 : 05 : 25'),
-  Lives('assets/live 3.png', 'Tony Stark', 'Live Guides for Car Racers', 'Apr 25, 2021',
+  Lives('assets/upcoming 1.png', 'Tony Stark', 'Live Guides for Car Racers', 'Apr 25, 2021',
       '01 : 05 : 25'),
-  Lives('assets/live 3.png', 'Tony Stark', 'Live Guides for Car Racers', 'Apr 25, 2021',
+  Lives('assets/upcoming 3.png', 'Tony Stark', 'Live Guides for Car Racers', 'Apr 25, 2021',
       '01 : 05 : 25'),
 
 ];
