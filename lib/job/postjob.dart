@@ -3,6 +3,7 @@ import 'package:csc_picker/csc_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:markdowneditor/markdowneditor.dart';
 import 'package:work/job/component/postjobheader.dart';
 import 'package:work/page/job.dart';
 
@@ -14,9 +15,12 @@ class PostJob extends StatefulWidget {
 class _PostJobState extends State<PostJob> {
   int radio =1;
   Size size;
+  TextEditingController controller = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     size=MediaQuery.of(context).size;
+    controller.text ='Enter Job description.....';
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -133,7 +137,9 @@ class _PostJobState extends State<PostJob> {
                             SizedBox(height: 15,),
                             t('Job Description'),
                             SizedBox(height: 10,),
-                            bigfield(),
+                            Container(
+                                height: 250,
+                                child: Markeditor(controller:controller , size: size)),
                             SizedBox(height: 15,),
                             t('Job Location'),
                             SizedBox(height: 10,),
@@ -258,6 +264,7 @@ class _PostJobState extends State<PostJob> {
       ),
     );
   }
+
   Widget t(String t){
     return  AutoSizeText(
       t ,
@@ -356,4 +363,5 @@ class _PostJobState extends State<PostJob> {
       });
     });
  }
+
 }

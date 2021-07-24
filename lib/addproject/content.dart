@@ -1,6 +1,7 @@
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:markdowneditor/markdowneditor.dart';
 import 'package:work/component/wid.dart';
 
 class Content extends StatefulWidget {
@@ -11,6 +12,7 @@ class Content extends StatefulWidget {
 class _ContentState extends State<Content> {
   List n = [1,2];
   Size size;
+  TextEditingController controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     size = MediaQuery.of(context).size;
@@ -154,7 +156,9 @@ class _ContentState extends State<Content> {
           SizedBox(height: 20,),
           t('About'),
           SizedBox(height: 15,),
-          bigfield('Basic info about project',Colors.grey[200],270),
+          Container(
+            height: 400,
+              child: Markeditor(controller:controller , size: size)),
           SizedBox(height: 40,),
         ],
       ),
