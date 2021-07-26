@@ -9,6 +9,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:work/addproject/addp.dart';
 import 'package:work/auth/regcompany.dart';
+import 'package:work/auth/registerbussinesspage.dart';
 import 'package:work/auth/signup.dart';
 import 'package:work/controller/authcontroller.dart';
 import 'package:work/controller/pagecon.dart';
@@ -19,7 +20,7 @@ import 'package:work/profile/editprofile.dart';
 import 'package:work/profile/profile.dart';
 import 'package:work/project/project.dart';
 import 'package:work/project/projectpage.dart';
-List page = [ Profile(), Propage(), Body(), Job(), Body()];
+List page = [ Regbussiness(), Propage(), Body(), Job(), Body()];
 class Home extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
