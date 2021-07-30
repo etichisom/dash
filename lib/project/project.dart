@@ -33,7 +33,7 @@ class _ProjectState extends State<Project> {
   Widget build(BuildContext context) {
     size = MediaQuery.of(context).size;
     pp = Provider.of<Pagecontrol>(context);
-    return pp.project !=null?Propage():Scaffold(
+    return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -78,7 +78,7 @@ class _ProjectState extends State<Project> {
               ) ,
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
-              children:p.map((e) => Pcard(size,e,pp) ).toList(),
+              children:p.map((e) => Pcard(size,e,pp,context) ).toList(),
             )
           ],
         ),

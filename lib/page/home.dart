@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:vrouter/vrouter.dart';
 import 'package:work/addproject/addp.dart';
 import 'package:work/auth/regcompany.dart';
 import 'package:work/auth/registerbussinesspage.dart';
@@ -20,8 +21,12 @@ import 'package:work/profile/editprofile.dart';
 import 'package:work/profile/profile.dart';
 import 'package:work/project/project.dart';
 import 'package:work/project/projectpage.dart';
-List page = [ Regbussiness(), Propage(), Body(), Job(), Body()];
+
 class Home extends StatefulWidget {
+  Widget child;
+
+  Home(this.child);
+
   @override
   _HomeState createState() => _HomeState();
 }
@@ -113,7 +118,7 @@ class _HomeState extends State<Home> {
              Expanded(
                child: Container(
                    height: size.height,
-                   child:pp.add==1?Ap():page[pp.index]),
+                   child:pp.add==1?Ap():widget.child),
              ),
            ],
          )
@@ -124,6 +129,7 @@ class _HomeState extends State<Home> {
       return InkWell(
         onTap: (){
           pp.setindex(index);
+          VRouter.of(context).push('/${index.toString()}');
           },
         onHover: (v){
           setState(() {

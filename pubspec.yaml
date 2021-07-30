@@ -37,6 +37,7 @@ dependencies:
   provider:
   flick_video_player: ^0.3.0
   markdowneditor: ^0.0.2
+  vrouter:
   flutter:
     sdk: flutter
 

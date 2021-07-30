@@ -2,6 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:vrouter/vrouter.dart';
 import 'package:work/component/cart.dart';
 import 'package:work/component/head.dart';
 import 'package:work/component/search.dart';
@@ -26,7 +27,7 @@ class _JobState extends State<Job> {
     size = MediaQuery.of(context).size;
     pp = Provider.of<Pagecontrol>(context);
     return Scaffold(
-      body:pp.job==1?PostJob():SingleChildScrollView(
+      body:SingleChildScrollView(
         child: Column(
           children: [
            Head(size),
@@ -43,7 +44,7 @@ class _JobState extends State<Job> {
                   ),
                   ElevatedButton.icon(onPressed: (){
                      setState(() {
-                       pp.setj(1);
+                      VRouter.of(context).push('/postjob');
                      });
                    }, icon:Icon(Icons.post_add),
                       label:Text('Post a Job',

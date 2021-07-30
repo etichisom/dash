@@ -29,7 +29,7 @@ class _ProfileState extends State<Profile>with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     size = MediaQuery.of(context).size;
     pp = Provider.of<Pagecontrol>(context);
-    List t = [ptab(size, pp),livetab(size, pp),savedtab(size, pp)];
+    List t = [ptab(size, pp),livetab(size, pp),savedtab(size, pp,context)];
     return Scaffold(
       body: ListView(
         children: [

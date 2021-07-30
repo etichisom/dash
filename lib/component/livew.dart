@@ -27,7 +27,7 @@ Widget livew(Size size, Live e){
               decoration:BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                   image: DecorationImage(
-                      image: AssetImage('assets/'+e.assest),
+                      image: AssetImage(e.assest),
                       fit: BoxFit.cover
                   )
               ),

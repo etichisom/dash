@@ -3,7 +3,7 @@ import 'package:work/model/projectm.dart';
 import 'package:work/project/projectcard.dart';
 import 'package:work/controller/pagecon.dart';
 
-Widget savedtab (Size size, Pagecontrol pp ){
+Widget savedtab (Size size, Pagecontrol pp,BuildContext context ){
   return  GridView(
     gridDelegate:SliverGridDelegateWithMaxCrossAxisExtent(
       maxCrossAxisExtent: 300,
@@ -13,6 +13,6 @@ Widget savedtab (Size size, Pagecontrol pp ){
     ) ,
     shrinkWrap: true,
     physics: NeverScrollableScrollPhysics(),
-    children:p.map((e) => Pcard(size,e,pp) ).toList(),
+    children:p.map((e) => Pcard(size,e,pp,context) ).toList(),
   );
 }

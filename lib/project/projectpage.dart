@@ -4,6 +4,7 @@ import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:video_player/video_player.dart';
+import 'package:vrouter/vrouter.dart';
 import 'package:work/component/wid.dart';
 import 'package:work/controller/pagecon.dart';
 import 'package:work/model/learn.dart';
@@ -36,7 +37,15 @@ class _PropageState extends State<Propage>with SingleTickerProviderStateMixin {
         child: ListView(
           physics:BouncingScrollPhysics(),
           children: [
-            text('< Back'),
+            Row(
+              children: [
+                InkWell(
+                  onTap: (){
+                    VRouter.of(context).push('/0');
+                  },
+                    child: text('< Back')),
+              ],
+            ),
             SizedBox(height: 20,),
            Text('Project',style:GoogleFonts.roboto(fontSize: 23,color: Colors.blue[800],fontWeight: FontWeight.bold),),
             SizedBox(height: 20,),
@@ -127,7 +136,11 @@ class _PropageState extends State<Propage>with SingleTickerProviderStateMixin {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
-                              Icon(Icons.more_horiz,size: 25,)
+                              InkWell(
+                                onTap: (){
+                                  VRouter.of(context).push('/docu');
+                                },
+                                  child: Icon(Icons.more_horiz,size: 25,))
                             ],
                           ),
                           SizedBox(height: 10,),
@@ -314,7 +327,7 @@ class _PropageState extends State<Propage>with SingleTickerProviderStateMixin {
               scrollDirection: Axis.horizontal,
                 children:p.map((e) => Container(
                     width: 250,
-                    child: Pcard(size,e,pp)) ).toList(),
+                    child: Pcard(size,e,pp,context)) ).toList(),
               ),
             ):SizedBox(),
             SizedBox(height: 20,),
